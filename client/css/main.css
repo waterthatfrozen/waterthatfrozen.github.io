@@ -1,0 +1,13 @@
+body {
+    font-family: 'Manrope', 'Noto Sans Thai', 'JetBrains Mono', monospace, sans-serif;
+    height: 100%;
+}
+
+.container{
+    max-width: 50em;
+}
+
+.divider{
+    border-bottom: 1px solid #eaecef;
+    margin: 1em 0;
+}
