@@ -8,6 +8,7 @@
     <title>Home | Paphana Yiwsiw</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,65 +21,84 @@
     <script src="./js/main.js" defer></script>
 </head>
 
-<body class="d-flex h-100 flex-column text-start">
-
-    <main>
-    <!-- Intro Section -->
-    <div class="container d-flex w-100 h-100 mt-4 p-4 mx-auto flex-column">
-        <div id="intro" class="mb-4">
-            <img src="./img/py2022.jpg" width="150" class="rounded mb-3" alt="Paphana Yiwsiw 2022">
-            <h1 class="fw-bold">Paphana Yiwsiw<span class="fs-4 fw-normal"> (Ice)</span></h1>
-            <p class="lead">
-                I'm a fast-learner and enthusiastic in computer programming with strong interest in web application and software development.
+<body class="h-100 text-start">
+    <header class="h-100 container p-4 d-flex flex-column justify-content-between">
+        <div id="intro" class="my-auto">
+            <a href="#" target="_self">
+                <h1 class="fw-bold">Paphana Yiwsiw<span class="fs-4 fw-normal"> (Ice)</span></h1>
+            </a>
+            <p>
+                I'm studying at <a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology
+                    (SIIT), Thammasat University.</a>
+                Currently, I'm senior student in the Bachelor of Engineering (B.Eng.) in Digital Engineering (DE).
+                I'm a fast-learner and enthusiastic in computer programming with strong interest in web application and
+                software development.
             </p>
+            <ul class="list-unstyled row row-cols-1 row-cols-md-2">
+                <li class="col"><i class="bi bi-envelope"></i> Email: <a href="mailto:paphana.yiwsiw@gmail.com">
+                        paphana.yiwsiw@gmail.com</a></li>
+                <li class="col"><i class="bi bi-linkedin"></i> LinkedIn: <a
+                        href="https://www.linkedin.com/in/paphana-yiwsiw">Paphana Yiwsiw</a></li>
+                <li class="col"><i class="bi bi-github"></i> GitHub: <a
+                        href="https://www.github.com/waterthatfrozen">@waterthatfrozen</a></li>
+                <li class="col"><i class="bi bi-instagram"></i> Instagram: <a
+                        href="https://www.instagram.com/waterthatfrozen">@waterthatfrozen</a></li>
+            </ul>
+            <a href="#education-background" target="_self"><i class="bi bi-arrow-down"></i> Scroll down to learn more about me.</a>
         </div>
-        <div id="education-background" class="mb-4">
-            <h3 class="fw-bold">Education Background</h3>
-            <div class="px-3 pt-2">
-                <h5><span class="fw-bold">B.Eng.</span> Bachelor of Engineering (Digital Engineering)</h5>
-                <h6>Sirindhorn International Institute of Technology (SIIT), Thammasat University</h6>
-                <span class="fs-6">
-                    2019 - Present (Expected Graduation: 2023) | GPA: 3.94/4.00<br/>
-                    Specialized in Application software development. <br/>
-                    Achived first rank in academic year 2020.
-                </span>
+    </header>
+
+    <main class="my-5" id="main">
+        <!-- Intro Section -->
+        <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
+            <div id="education-background" class="mt-5 mb-4">
+                <a href="#education-background" target="_self">
+                    <h3 class="fw-bold">Education Background</h3>
+                </a>
             </div>
-            <hr />
-            <div class="px-3 pt-2">
-                <h5><span class="fw-bold">High School</span> Science and Mathematics Program</h5>
-                <h6>Princess Chulaborn Science High School, Trang</h6>
-                <span class="fs-6">
-                    2016 - 2019 | GPA: 3.71/4.00
-                </span>
+            <div id="work-experience" class="mb-4">
+                <a href="#work-experience" target="_self">
+                    <h3 class="fw-bold">Work Experiences</h3>
+                </a>
             </div>
+            <div id="project" class="mb-4">
+                <a href="#project" target="_self">
+                    <h3 class="fw-bold">Projects</h3>
+                </a>
+            </div>
+            <div id="other-experience" class="mb-4">
+                <a href="#other-experience" target="_self">
+                    <h3 class="fw-bold">Other Experiences</h3>
+                </a>
+            </div>
+            <div id="skill" class="mb-4">
+                <a href="#skill" target="_self">
+                    <h3 class="fw-bold">Skills</h3>
+                </a>
+            </div>
+            <div id="end" class="pb-5"></div>
         </div>
-        <div id="work-experience" class="mb-4">
-            <h3 class="fw-bold">Work Experiences</h3>
-            <div class="px-3 pt-2">
-                <h5>Research Assistant</h5>
-                <h6>Web Application Development, Smart Lighting in Campus, Thammasat AI-Ready City</h6>
-                <span class="fs-6">
-                    June 2022 - Present<br/>
-                    GitHub: <a href="https://www.github.com/waterthatfrozen/Smart-City" target="_blank" class="text-decoration-none">https://www.github.com/waterthatfrozen/Smart-City</a>
-                </span>
-            </div>
-            <hr/>
-            <div class="px-3 pt-2">
-                <h5>Undergraduate Research Assistant</h5>
-                <h6>Biomedical Image Processing Unit</h6>
-                <span class="fs-6">
-                    June 2021 - July 2021<br/>
-                    Worked on “Hemorrhage Segmentation using a thresholding method with Multi-Region Contrast Enhancement in Mobile Fundus Images”
-                </span>
-            </div>
-        </div>
-    </div>
     </main>
 
     <!-- Sticky footer -->
-    <footer class="footer mt-5 py-2 bg-dark">
-        <div class="container">
-            <span class="text-white small">&copy; 2022 Paphana Yiwsiw | <a href="https://www.github.com/waterthatfrozen/" class="link-light text-decoration-none" target="_blank">GitHub</a></span>
+    <footer class="footer bg-dark">
+        <div class="container d-flex flex-column justify-content-evenly">
+            <div class="d-flex pt-2 flex-row justify-content-between">
+                <span class="text-white small" id="copyright"></span>
+                <a href="#" target="_top" id="top-button" class="small text-white link-light"><i
+                    class="bi bi-arrow-up"></i> Go to Top</a>
+            </div>
+            <div class="d-flex flex-row justify-content-between">
+                <span class="text-white-50 small" id="time">Getting time...</span>
+                <span class="small pt-0 text-white d-none d-md-block" id="nav-link">
+                    Jump to: 
+                    <a href="#education-background" target="_self" class="link-light">Education</a> | 
+                    <a href="#work-experience" target="_self" class="link-light">Work</a> |
+                    <a href="#project" target="_self" class="link-light">Projects</a> |
+                    <a href="#other-experience" target="_self" class="link-light">Other</a> |
+                    <a href="#skill" target="_self" class="link-light">Skills</a>
+                </span>
+            </div>
         </div>
     </footer>
 
