@@ -1,2 +1,3 @@
 # waterthatfrozen.github.io
-GitHub Pages
+GitHub Pages \\
+Paphana Yiwsiw (@waterthatfrozen) \\
