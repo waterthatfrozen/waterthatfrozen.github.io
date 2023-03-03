@@ -22,8 +22,14 @@
 </head>
 
 <body class="text-start">
-    <div class="h-100 d-flex flex-column container px-4 py-2 my-auto justify-content-center">
-        <header class="">
+    <header class="bg-navy nav-header-bar">
+        <div class="container d-flex flex-row justify-content-between py-2">
+            <span class="small"><a href="/" class="text-white">Welcome!</span>
+        </div>
+    </header>
+
+        <main id="main" class="h-100 d-flex flex-column container px-4 py-2 my-auto justify-content-center">
+            <!-- Intro Section -->
             <div id="intro" class="my-auto">
                 <div class="d-block d-md-flex">
                     <div class="d-inline-block m-3 ms-0 ratio-1x1 img-fluid">
@@ -40,31 +46,17 @@
                         </p>
                     </div>
                 </div>
+
                 <ul class="list-unstyled row row-cols-1 row-cols-md-2">
-                    <li class="col"><i class="bi bi-envelope"></i> Email: <a href="mailto:paphana.yiwsiw@gmail.com">
-                            paphana.yiwsiw@gmail.com</a></li>
-                    <li class="col"><i class="bi bi-linkedin"></i> LinkedIn: <a
-                            href="https://www.linkedin.com/in/paphana-yiwsiw">Paphana Yiwsiw</a></li>
-                    <li class="col"><i class="bi bi-github"></i> GitHub: <a
-                            href="https://www.github.com/waterthatfrozen">@waterthatfrozen</a></li>
-                    <li class="col"><i class="bi bi-instagram"></i> Instagram: <a
-                            href="https://www.instagram.com/waterthatfrozen">@waterthatfrozen</a></li>
+                    <a href="construction.html" class="col"><li class="box-construct-link">Profile <i class="bi bi-arrow-right"></i></li></a>
+                    <a href="construction.html" class="col"><li class="box-construct-link">Projects <i class="bi bi-arrow-right"></i></li></a>
+                    <a href="construction.html" class="col"><li class="box-construct-link">Gallery <i class="bi bi-arrow-right"></i></li></a>
+                    <a href="contacts.html" class="col"><li class="box-link">Contacts <i class="bi bi-arrow-right"></i></li></a>
                 </ul>
+
+                <div id="end" class="pb-3 mb-3"></div>
             </div>
-        </header>
-
-        <main id="main">
-            <!-- Intro Section -->
-            <ul class="list-unstyled row row-cols-1 row-cols-md-2">
-                <a href="profile.html" class="col"><li class="box-link">Profile <i class="bi bi-arrow-right"></i></li></a>
-                <a href="construction.html" class="col"><li class="box-construct-link">Projects <i class="bi bi-arrow-right"></i></li></a>
-                <a href="construction.html" class="col"><li class="box-construct-link">Gallery <i class="bi bi-arrow-right"></i></li></a>
-                <a href="construction.html" class="col"><li class="box-construct-link">Contacts <i class="bi bi-arrow-right"></i></li></a>
-            </ul>
         </main>
-
-        <div id="end" class="pb-3 mb-3"></div>
-    </div>
 
     <!-- Sticky footer -->
     <footer class="footer bg-dark">
