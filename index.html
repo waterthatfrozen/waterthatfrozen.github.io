@@ -21,84 +21,56 @@
     <script src="./js/main.js" defer></script>
 </head>
 
-<body class="h-100 text-start">
-    <header class="h-100 container p-4 d-flex flex-column justify-content-between">
-        <div id="intro" class="my-auto">
-            <a href="#" target="_self">
-                <h1 class="fw-bold">Paphana Yiwsiw<span class="fs-4 fw-normal"> (Ice)</span></h1>
-            </a>
-            <p>
-                I'm studying at <a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology
-                    (SIIT), Thammasat University.</a>
-                Currently, I'm senior student in the Bachelor of Engineering (B.Eng.) in Digital Engineering (DE).
-                I'm a fast-learner and enthusiastic in computer programming with strong interest in web application and
-                software development.
-            </p>
-            <ul class="list-unstyled row row-cols-1 row-cols-md-2">
-                <li class="col"><i class="bi bi-envelope"></i> Email: <a href="mailto:paphana.yiwsiw@gmail.com">
-                        paphana.yiwsiw@gmail.com</a></li>
-                <li class="col"><i class="bi bi-linkedin"></i> LinkedIn: <a
-                        href="https://www.linkedin.com/in/paphana-yiwsiw">Paphana Yiwsiw</a></li>
-                <li class="col"><i class="bi bi-github"></i> GitHub: <a
-                        href="https://www.github.com/waterthatfrozen">@waterthatfrozen</a></li>
-                <li class="col"><i class="bi bi-instagram"></i> Instagram: <a
-                        href="https://www.instagram.com/waterthatfrozen">@waterthatfrozen</a></li>
-            </ul>
-            <a href="#education-background" target="_self"><i class="bi bi-arrow-down"></i> Scroll down to learn more about me.</a>
-        </div>
-    </header>
+<body class="text-start">
+    <div class="h-100 d-flex flex-column container px-4 py-2 my-auto justify-content-center">
+        <header class="">
+            <div id="intro" class="my-auto">
+                <div class="d-block d-md-flex">
+                    <div class="d-inline-block m-3 ms-0 ratio-1x1 img-fluid">
+                        <img src="img/Paphana-Yiwsiw-1x1.jpg" alt="Picture of me" class="rounded" width="150" height="150">
+                    </div>
+                    <div class="d-inline-block mt-md-3">
+                        <a href="#" target="_self">
+                            <h1 class="fw-bold">Paphana Yiwsiw<span class="fs-4 fw-normal"> (Ice)</span></h1>
+                        </a>
+                        <p>
+                            Hi there! Currently, I'm a software engineer intern at Agoda. I'm senior year student at
+                            <a href="https://siit.tu.ac.th">SIIT, Thammasat University</a>, pursuing a bachelor's degree in Digital Engineering.
+                            I'm an enthusiastic and strongly interest in web application and software development.
+                        </p>
+                    </div>
+                </div>
+                <ul class="list-unstyled row row-cols-1 row-cols-md-2">
+                    <li class="col"><i class="bi bi-envelope"></i> Email: <a href="mailto:paphana.yiwsiw@gmail.com">
+                            paphana.yiwsiw@gmail.com</a></li>
+                    <li class="col"><i class="bi bi-linkedin"></i> LinkedIn: <a
+                            href="https://www.linkedin.com/in/paphana-yiwsiw">Paphana Yiwsiw</a></li>
+                    <li class="col"><i class="bi bi-github"></i> GitHub: <a
+                            href="https://www.github.com/waterthatfrozen">@waterthatfrozen</a></li>
+                    <li class="col"><i class="bi bi-instagram"></i> Instagram: <a
+                            href="https://www.instagram.com/waterthatfrozen">@waterthatfrozen</a></li>
+                </ul>
+            </div>
+        </header>
 
-    <main class="my-5" id="main">
-        <!-- Intro Section -->
-        <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
-            <div id="education-background" class="mt-5 mb-4">
-                <a href="#education-background" target="_self">
-                    <h3 class="fw-bold">Education Background</h3>
-                </a>
-            </div>
-            <div id="work-experience" class="mb-4">
-                <a href="#work-experience" target="_self">
-                    <h3 class="fw-bold">Work Experiences</h3>
-                </a>
-            </div>
-            <div id="project" class="mb-4">
-                <a href="#project" target="_self">
-                    <h3 class="fw-bold">Projects</h3>
-                </a>
-            </div>
-            <div id="other-experience" class="mb-4">
-                <a href="#other-experience" target="_self">
-                    <h3 class="fw-bold">Other Experiences</h3>
-                </a>
-            </div>
-            <div id="skill" class="mb-4">
-                <a href="#skill" target="_self">
-                    <h3 class="fw-bold">Skills</h3>
-                </a>
-            </div>
-            <div id="end" class="pb-5"></div>
-        </div>
-    </main>
+        <main id="main">
+            <!-- Intro Section -->
+            <ul class="list-unstyled row row-cols-1 row-cols-md-2">
+                <a href="profile.html" class="col"><li class="box-link">Profile <i class="bi bi-arrow-right"></i></li></a>
+                <a href="construction.html" class="col"><li class="box-construct-link">Projects <i class="bi bi-arrow-right"></i></li></a>
+                <a href="construction.html" class="col"><li class="box-construct-link">Gallery <i class="bi bi-arrow-right"></i></li></a>
+                <a href="construction.html" class="col"><li class="box-construct-link">Contacts <i class="bi bi-arrow-right"></i></li></a>
+            </ul>
+        </main>
+
+        <div id="end" class="pb-3 mb-3"></div>
+    </div>
 
     <!-- Sticky footer -->
     <footer class="footer bg-dark">
-        <div class="container d-flex flex-column justify-content-evenly">
-            <div class="d-flex pt-2 flex-row justify-content-between">
-                <span class="text-white small" id="copyright"></span>
-                <a href="#" target="_top" id="top-button" class="small text-white link-light"><i
-                    class="bi bi-arrow-up"></i> Go to Top</a>
-            </div>
-            <div class="d-flex flex-row justify-content-between">
-                <span class="text-white-50 small" id="time">Getting time...</span>
-                <span class="small pt-0 text-white d-none d-md-block" id="nav-link">
-                    Jump to: 
-                    <a href="#education-background" target="_self" class="link-light">Education</a> | 
-                    <a href="#work-experience" target="_self" class="link-light">Work</a> |
-                    <a href="#project" target="_self" class="link-light">Projects</a> |
-                    <a href="#other-experience" target="_self" class="link-light">Other</a> |
-                    <a href="#skill" target="_self" class="link-light">Skills</a>
-                </span>
-            </div>
+        <div class="container d-flex flex-row justify-content-between p-2">
+            <span class="text-white small" id="copyright"></span>
+            <span class="text-white-50 small" id="time">Getting time...</span>
         </div>
     </footer>
 
