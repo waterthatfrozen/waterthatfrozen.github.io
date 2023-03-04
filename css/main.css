@@ -54,7 +54,7 @@ h3 {
     padding-left: 0.5em !important;
 }
 
-.box-link, .box-construct-link{
+.box-link, .box-construct-link, .box-danger-link{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,10 +78,17 @@ h3 {
     color: #fff;
 }
 
+.box-danger-link:hover{
+    background-color: #ac1a1a;
+    border: 1px solid #ac1a1a;
+    color: #fff;
+}
+
 .nav-header-bar{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 100;
 }
 
 .bg-navy{
