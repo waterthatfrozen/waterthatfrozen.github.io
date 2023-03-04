@@ -45,34 +45,6 @@ const work = [
     }
 ];
 
-const project = [
-    {
-        title: "Smart Lighting in Campus: The Web Application and Data Analytics",
-        subtitle: "Thammasat AI-Ready City Project",
-        year: "June 2022 - Present",
-        description: `Web application development for monitoring and controlling the smart lighting system in campus, and data analytics for more efficient energy usage and sufficient lighting in the campus.`,
-        link: `<a href="https://www.github.com/waterthatfrozen/Smart-City" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i> GitHub: waterthatfrozen/Smart-City</a>`
-    },{
-        title: "Wordled",
-        subtitle: "Clone of Popular Web-based Wordle Game",
-        year: "March 2022 - April 2022",
-        description: `DES422 Web and Business Application Development Course Project`,
-        link: `<a href="https://www.github.com/waterthatfrozen/DES422-Group-Project" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i> GitHub: waterthatfrozen/DES422-Group-Project</a>`
-    },{
-        title: "EATERIO",
-        subtitle: "Canteen Food Ordering and Management System",
-        year: "September 2021 - December 2021",
-        description: `CSS325/326 Database Systems and Laboratory Course Project`,
-        link: `<a href="https://www.github.com/waterthatfrozen/EATERIO" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i> GitHub: waterthatfrozen/EATERIO</a>`
-    },{
-        title: "LabRoom",
-        subtitle: "Science Laboratory Assistant and Management System",
-        year: "November 2017 - May 2018",
-        description: `<i class="bi bi-award-fill"></i> First Runner-Up, Student Application Software Category, National Software Contest (NSC2018)`,
-        link: `<a href="https://www.github.com/waterthatfrozen/LabRoomProject" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i> GitHub: waterthatfrozen/LabRoomProject</a>`
-    }
-];
-
 const publication = [
     {
         title: `Automated Street Light Adjustment System on Campus with AI-Assisted Data Analytics`,
