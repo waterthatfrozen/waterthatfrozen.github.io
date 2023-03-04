@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Paphana Yiwsiw</title>
+    <title>Profile | Paphana Yiwsiw</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -17,48 +17,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"
         defer></script>
-    <link rel="stylesheet" href="./css/profile-main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/profile-data.js"></script>
     <script src="./js/profile-main.js" defer></script>
 </head>
 
 <body class="h-100 text-start">
-    <header class="h-100 container px-4 py-2 d-flex flex-column justify-content-between">
-        <div id="intro" class="my-auto">
-            <div class="d-block d-md-flex">
-                <div class="d-inline-block m-3 ms-0 ratio-1x1 img-fluid">
-                    <img src="img/Paphana-Yiwsiw-1x1.jpg" alt="Picture of me" class="rounded" width="150" height="150">
-                </div>
-                <div class="d-inline-block mt-md-3">
-                    <a href="#" target="_self">
-                        <h1 class="fw-bold">Paphana Yiwsiw<span class="fs-4 fw-normal"> (Ice)</span></h1>
-                    </a>
-                    <p>
-                        I'm studying at <a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology
-                            (SIIT), Thammasat University.</a>
-                        Currently, I'm senior student in the Bachelor of Engineering (B.Eng.) in Digital Engineering (DE).
-                        I'm a fast-learner and enthusiastic in computer programming with strong interest in web application and
-                        software development.
-                    </p>
-                </div>
-            </div>
-            <ul class="list-unstyled row row-cols-1 row-cols-md-2">
-                <li class="col"><i class="bi bi-envelope"></i> Email: <a href="mailto:paphana.yiwsiw@gmail.com">
-                        paphana.yiwsiw@gmail.com</a></li>
-                <li class="col"><i class="bi bi-linkedin"></i> LinkedIn: <a
-                        href="https://www.linkedin.com/in/paphana-yiwsiw">Paphana Yiwsiw</a></li>
-                <li class="col"><i class="bi bi-github"></i> GitHub: <a
-                        href="https://www.github.com/waterthatfrozen">@waterthatfrozen</a></li>
-                <li class="col"><i class="bi bi-instagram"></i> Instagram: <a
-                        href="https://www.instagram.com/waterthatfrozen">@waterthatfrozen</a></li>
-            </ul>
-            <a href="#education-background" target="_self"><i class="bi bi-arrow-down"></i> Scroll down to learn more about me.</a>
+    <header class="bg-navy nav-header-bar">
+        <div class="container d-flex flex-row justify-content-between py-2">
+            <span class="small"><a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a></span>
+            <a class="small text-white" id="top-button" href="#">My Profile</a>
         </div>
     </header>
 
     <main class="my-5" id="main">
         <!-- Intro Section -->
         <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
-            <div id="education-background" class="mt-5 mb-4">
+            <div class="d-inline-block mt-md-3">
+                <a href="#" target="_self">
+                    <h1 class="fw-bold"><i class="bi bi-file-earmark-person"></i><br/>My Profile</h1>
+                </a>
+                <p>
+                    Currently, I'm a software engineer intern at <a href="https://www.agoda.com/" target="_blank">Agoda</a>, and a senior year student at <a href="https://siit.tu.ac.th" target="_blank">Sirindhorn International Institute of Technology, Thammasat University</a>. 
+                    I'm pursuing a bachelor's degree in Digital Engineering, major in application software development. I'm interested in programming and web development. 
+                    I'm also interested in learning and exploring new things.<br/>For more information, scroll down to see my profile below.
+                </p>
+            </div>
+            <div id="education-background" class="mb-4">
                 <a href="#education-background" target="_self">
                     <h3 class="fw-bold">Education Background</h3>
                 </a>
@@ -68,14 +53,19 @@
                     <h3 class="fw-bold">Work Experiences</h3>
                 </a>
             </div>
-            <div id="project" class="mb-4">
-                <a href="#project" target="_self">
-                    <h3 class="fw-bold">Projects</h3>
+            <div id="publication" class="mb-4">
+                <a href="#publication" target="_self">
+                    <h3 class="fw-bold">Publications</h3>
                 </a>
             </div>
-            <div id="other-experience" class="mb-4">
-                <a href="#other-experience" target="_self">
-                    <h3 class="fw-bold">Other Experiences</h3>
+            <div id="award" class="mb-4">
+                <a href="#award" target="_self">
+                    <h3 class="fw-bold">Awards</h3>
+                </a>
+            </div>
+            <div id="volunteer-experience" class="mb-4">
+                <a href="#volunteer-experience" target="_self">
+                    <h3 class="fw-bold">Volunteer Experiences</h3>
                 </a>
             </div>
             <div id="skill" class="mb-4">
@@ -89,23 +79,9 @@
 
     <!-- Sticky footer -->
     <footer class="footer bg-dark">
-        <div class="container d-flex flex-column justify-content-evenly">
-            <div class="d-flex pt-2 flex-row justify-content-between">
-                <span class="text-white small" id="copyright"></span>
-                <a href="#" target="_top" id="top-button" class="small text-white link-light"><i
-                    class="bi bi-arrow-up"></i> Go to Top</a>
-            </div>
-            <div class="d-flex flex-row justify-content-between">
-                <span class="text-white-50 small" id="time">Getting time...</span>
-                <span class="small pt-0 text-white d-none d-md-block" id="nav-link">
-                    Jump to: 
-                    <a href="#education-background" target="_self" class="link-light">Education</a> | 
-                    <a href="#work-experience" target="_self" class="link-light">Work</a> |
-                    <a href="#project" target="_self" class="link-light">Projects</a> |
-                    <a href="#other-experience" target="_self" class="link-light">Other</a> |
-                    <a href="#skill" target="_self" class="link-light">Skills</a>
-                </span>
-            </div>
+        <div class="container d-flex flex-row justify-content-between p-2">
+            <span class="text-white small" id="copyright"></span>
+            <span class="text-white-50 small" id="time">Getting time...</span>
         </div>
     </footer>
 

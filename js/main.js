@@ -1,7 +1,3 @@
-window.onresize = () => {
-    windowHeight = window.innerHeight;
-};
-
 let currentTime = new Date();
 const timeSpan = document.getElementById("time");
 const copyrightSpan = document.getElementById("copyright");

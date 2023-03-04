@@ -50,7 +50,8 @@ h3 {
 
 .list-dashed{
     list-style-type: "- ";
-    margin-left: 1em;
+    margin-left: 0.5em !important;
+    padding-left: 0.5em !important;
 }
 
 .box-link, .box-construct-link{
