@@ -1,14 +1,13 @@
 const albums = [
-    // {
-    //     id: 1,
-    //     name: "My Playtime",
-    //     description: "I took these photos during my free time. I hope you enjoy them.",
-    //     basePath: "playtime",
-    //     first: -1,
-    //     last: -1,
-    //     excluded: []
-    // },
     {
+        id: 1,
+        name: "My Playtime",
+        description: "I took these photos during my free time. I hope you enjoy them.",
+        basePath: "playtime",
+        first: 1,
+        last: 27,
+        excluded: [1, 5, 6]
+    },{
         id: 2,
         name: "74th Chula-Thammasat Traditional Football Match 2020",
         description: "February 8, 2020. National Stadium, Bangkok, Thailand.",
