@@ -80,7 +80,7 @@ const fileLists = [
         title: "SIIT-DE: Year 3 Semester 2, Year 2021",
         code: "SIITDE-Y3T22021",
         list: [
-            { code: "DES329", fileName: "Chapter 1-2 Summary", path: "pdf/DES329-Summary-Chapter-1-2-pdf.pdf", tag: ["Review"] },
+            { code: "DES329", fileName: "Chapter 1-2 Summary", path: "pdf/DES329-Summary-Chapter-1-2.pdf", tag: ["Review"] },
             { code: "DES329", fileName: "Midterm Summary", path: "pdf/DES329-Midterm-Summary.pdf", tag: ["Review", "Midterm"] },
             { code: "DES329", fileName: "Final Summary", path: "pdf/DES329-Final-Summary.pdf", tag: ["Review", "Final"] },
             { code: "DES332", fileName: "Midterm Summary", path: "pdf/DES332-Midterm-Summary.pdf", tag: ["Review", "Midterm"] },
