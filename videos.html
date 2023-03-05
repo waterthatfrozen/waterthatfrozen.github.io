@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Viewer | Paphana Yiwsiw</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Manrope:wght@300;400;700&family=Noto+Sans+Thai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/videos-data.js"></script>
+    <script src="./js/videos-main.js" defer></script>
+</head>
+
+<body class="text-start">
+    <header class="bg-danger nav-header-bar">
+        <div class="container d-flex flex-row justify-content-between py-2">
+            <span class="small"><a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a></span>
+            <a class="small text-white" href="#">CONFIDENTIAL DO NOT SHARE!</a>
+        </div>
+    </header>
+
+    <main class="my-5" id="main">
+        <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
+            <div class="d-inline-block mt-md-3">
+                <h1 class="fw-bold text-danger"><i class="bi bi-fast-forward-btn"></i><br/>Video Viewer</h1>
+                <p>
+                    So, you are the visual learner type, huh?
+                    Here you can watch all the videos that I've recorded for my friends to help them study for exams.
+                    These videos are first recorded during the midst of the COVID-19 pandemic, and you can see the quality of the videos keep improving as the semester goes on.
+                    I hope you enjoy watching these videos as much as I enjoyed making them.
+                </p>
+                <p>
+                    It is important to note that these videos are not meant to be used as a replacement for attending lectures.
+                    Some contents in these videos may be outdated at the time of your viewing. Please check with your lecture notes to make sure that the content is still relevant.
+                    Also, you can use pdf files that I've provided to follow along with the videos.
+                    Some videos may contain errors and typos, so take a look at video descriptions to see if there are any corrections first before using them.
+                </p>
+                <p>
+                    Remark: <span class="text-danger fw-bold">ANY USE OF THESE FILES FOR ANY PURPOSE OTHER THAN PERSONAL USE IS STRICTLY PROHIBITED IN EVERY CIRCUMSTANCES.</span>
+                    These videos are provided for free, no money is being made. The only reason I'm providing these files is to help my fellow students.
+                    If you are caught using any of these files for any other purpose, I will not hesitate to take legal action against you.<br/>
+                    [Creative Commons License: <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="link-danger" target="_blank">CC BY-NC-ND 4.0</a>]
+                </p>
+            </div>
+            <a href="#video-list" target="_self">
+                <h3 class="fw-bold text-danger">Videos List</h3>
+            </a>
+            <div id="video-list" class="mb-4">
+            </div>
+            <div id="end" class="pb-5"></div>
+        </div>
+    </main>
+
+    <!-- Sticky footer -->
+    <footer class="footer bg-dark">
+        <div class="container d-flex flex-row justify-content-between p-2">
+            <span class="text-white small" id="copyright"></span>
+            <span class="text-white-50 small" id="time">Getting time...</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
