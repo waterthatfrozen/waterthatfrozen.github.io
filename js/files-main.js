@@ -1,28 +1,19 @@
 function createFileList(file){
     let tags = "";
-    switch(file.tag){
-        case "Midterm":
-            tags = `<span class="badge rounded-pill text-bg-warning fw-normal">Midterm</span>`; break;
-        case "Final":
-            tags = `<span class="badge rounded-pill text-bg-danger fw-normal">Final</span>`; break;
-        case "Lab":
-            tags = `<span class="badge rounded-pill text-bg-success fw-normal">Lab</span>`; break;
-        case "Report":
-            tags = `<span class="badge rounded-pill text-bg-primary fw-normal">Report</span>`; break;
-        case "Review":
-            tags = `<span class="badge rounded-pill text-bg-info fw-normal">Review</span>`; break;
-        case "Other":
-            tags = `<span class="badge rounded-pill text-bg-secondary fw-normal">Other</span>`; break;
-        default: break;
-    }
+    file.tag.sort((a,b) => tagPriority.indexOf(a) - tagPriority.indexOf(b));
+    file.tag.forEach((tag, index) => {
+        tags += `<span class="badge rounded-pill text-bg-${tagColor[tagPriority.indexOf(tag)]} fw-normal ${index !== 0 ? "d-none d-md-inline" : "d-inline"}">${tag}</span>&MediumSpace;`;
+    });
     return `<li class="list-group-item">
         <div class="d-flex flex-row justify-content-between">
-            <span>
-                <a href="${file.path}" target="_blank" rel="noopener noreferrer" class="disabled">
+            <span class="${file.path === "#" ? "text-strikethrough" : ""}">
+                <a href="${file.path}" target="_blank" rel="noopener noreferrer" class="${file.path === "#" ? "disabled" : ""}">
                     <i class="bi bi-file-earmark-pdf"></i>&MediumSpace;${file.code+" "+file.fileName}
                 </a>
             </span>
-            ${tags}
+            <span>
+                ${tags}
+            </span>
         </div>
     </li>`;
 }
@@ -30,12 +21,16 @@ function createFileList(file){
 function createMainCard(fileList){
     fileList.list.sort((a,b) => {
         if(a.code < b.code) return -1;
-        if(a.code > b.code) return 1;
-        return 0;
+        else if(a.code > b.code) return 1;
+        else{
+            if(tagPriority.indexOf(a.tag[0]) < tagPriority.indexOf(b.tag[0])) return -1;
+            else if(a.tag[0] > b.tag[0]) return 1;
+            else return 0;
+        }
     });
     return `<div class="container border p-3 mb-3 rounded">
         <a href="#${fileList.id}" target="_self"><h5 class="text-danger" id="${fileList.id}">${fileList.title}</h5></a>
-        <p class="mb-2">Code: ${fileList.code}</p>
+        ${fileList.code ? `<p class="mb-2">Code: ${fileList.code}</p>` : ""}
         <ul class="list-group list-group-flush">
             ${fileList.list.map(createFileList).join("")}
         </ul>

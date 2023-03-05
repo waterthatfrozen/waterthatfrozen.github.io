@@ -42,6 +42,10 @@ h3 {
     color: #0b4f9c !important;
 }
 
+h5{
+    scroll-margin-top: 6em;
+}
+
 #nav-link,
 #top-button {
     opacity: 0;
@@ -96,6 +100,21 @@ h3 {
     color: #fff;
 }
 
+.text-bg-orange{
+    background-color: #dd890c;
+    color: #fff;
+}
+
+.text-bg-purple{
+    background-color: #7c0869;
+    color: #fff;
+}
+
+.text-bg-pink{
+    background-color: #ac5454;
+    color: #fff;
+}
+
 a.hover{
     background-color: #fff;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s;
@@ -108,4 +127,8 @@ a.hover:hover{
 a.disabled{
     pointer-events: none;
     cursor: default;
+}
+
+.text-strikethrough{
+    text-decoration: line-through;
 }
