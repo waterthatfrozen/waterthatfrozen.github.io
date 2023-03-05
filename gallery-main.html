@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Paphana Yiwsiw</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Manrope:wght@300;400;700&family=Noto+Sans+Thai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/gallery-data.js"></script>
+    <script src="./js/gallery-main.js" defer></script>
+</head>
+
+<body class="h-100 text-start">
+    <header class="bg-navy nav-header-bar">
+        <div class="container d-flex flex-row justify-content-between py-2">
+            <span class="small"><a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a></span>
+            <a class="small text-white" href="#">My Gallery</a>
+        </div>
+    </header>
+
+    <main class="my-5" id="main">
+        <!-- Intro Section -->
+        <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
+            <div class="d-inline-block mt-md-3">
+                <a href="#" target="_self">
+                    <h1 class="fw-bold"><i class="bi bi-images"></i><br/>My Gallery</h1>
+                </a>
+                <p>
+                    During my time in university, I am a member of SIIT Photo and Media Club.
+                    SIIT Photo and Media Club is a club that is responsible for taking photos and videos for SIIT events.
+                    More information about the club can be found on <a href="https://www.facebook.com/SIITPhotoClub" target="_blank">Facebook</a> 
+                    and <a href="https://www.instagram.com/siitphotoclub.official/" target="_blank">Instagram</a>.
+                    I have been a photographer, a videographer, a graphic designer for many events and activities.
+                    Also, I was club president for 2 years, from August 2020 to July 2021. 
+                    To be honest, I'm not a professional photographer, but I love to take photos and videos.
+                    Here are some of my works during those times.
+                    All photos and videos shown here are taken by me, copyright reserved by Paphana Yiwsiw and SIIT Photo and Media Club.
+                </p>
+            </div>
+            <div id="gallery-list">
+                
+            </div>
+            <div id="end" class="pb-5"></div>
+        </div>
+    </main>
+
+    <!-- Sticky footer -->
+    <footer class="footer bg-dark">
+        <div class="container d-flex flex-row justify-content-between p-2">
+            <span class="text-white small" id="copyright"></span>
+            <span class="text-white-50 small" id="time">Getting time...</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

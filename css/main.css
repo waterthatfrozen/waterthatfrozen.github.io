@@ -132,3 +132,7 @@ a.disabled{
 .text-strikethrough{
     text-decoration: line-through;
 }
+
+img{
+    scroll-margin-top: 6em;
+}

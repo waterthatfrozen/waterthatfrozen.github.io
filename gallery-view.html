@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | Paphana Yiwsiw</title>
+    <title>Gallery View | Paphana Yiwsiw</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -18,15 +18,18 @@
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"
         defer></script>
     <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/project-data.js"></script>
-    <script src="./js/project-main.js" defer></script>
+    <script src="./js/gallery-data.js"></script>
+    <script src="./js/gallery-view.js" defer></script>
 </head>
 
 <body class="h-100 text-start">
     <header class="bg-navy nav-header-bar">
         <div class="container d-flex flex-row justify-content-between py-2">
-            <span class="small"><a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a></span>
-            <a class="small text-white" id="top-button" href="#">My Projects</a>
+            <span class="small">
+                <a href="/gallery-main.html" class="text-white"><i class="bi bi-arrow-left"></i> Back</a> |
+                <a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a>
+            </span>
+            <a class="small text-white" id="top-button" href="#">Album View</a>
         </div>
     </header>
 
@@ -35,21 +38,11 @@
         <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
             <div class="d-inline-block mt-md-3">
                 <a href="#" target="_self">
-                    <h1 class="fw-bold"><i class="bi bi-images"></i><br/>My Gallery</h1>
+                    <h1 class="fw-bold"><i class="bi bi-images"></i><br/><span id="album-name"></span></h1>
                 </a>
-                <p>
-                    During my time in university, I am a member of SIIT Photo and Media Club.
-                    SIIT Photo and Media Club is a club that is responsible for taking photos and videos for SIIT events.
-                    More information about the club can be found on <a href="https://www.facebook.com/SIITPhotoClub" target="_blank">Facebook</a> 
-                    and <a href="https://www.instagram.com/siitphotoclub.official/" target="_blank">Instagram</a>.
-                    I have been a photographer, a videographer, a graphic designer for many events and activities.
-                    Also, I was club president for 2 years, from August 2020 to July 2021. 
-                    To be honest, I'm not a professional photographer, but I love to take photos and videos.
-                    Here are some of my works during those times.
-                    All photos and videos shown here are taken by me, copyright reserved by Paphana Yiwsiw and SIIT Photo and Media Club.
-                </p>
             </div>
-            <div id="project-list">
+            <p id="album-description"></p>
+            <div id="image-grid" class="row row-cols-2 row-cols-md-3 mt-2">
 
             </div>
             <div id="end" class="pb-5"></div>
