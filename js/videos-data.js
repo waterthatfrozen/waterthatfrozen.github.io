@@ -12,6 +12,14 @@ const videoLists = [
             { code: "DES102", videoName: "Midterm Part 2", path:"https://youtu.be/HKuY9-ZW93Q", tag: ["Midterm"] }
         ]
     },{
+        id: "y2t1",
+        title: "SIIT-DE: Year 2 Semester 1, Year 2020",
+        midterm: "",
+        final: "",
+        list: [
+            { code: "GTS231", videoName: "Project Presentation", path: "https://youtu.be/IZEX7XzF868", tag: ["Project", "Presentation"] },
+        ]
+    },{
         id: "y2t2",
         title: "SIIT-DE: Year 2 Semester 2, Year 2020",
         midterm: "https://www.youtube.com/playlist?list=PLZ6tijhd0F7OqOxMD_VLMJL0SaS7ITS8f",
@@ -31,7 +39,8 @@ const videoLists = [
             { code: "DES229", videoName: "Final", path: "https://youtu.be/elKgy0u-QfA", tag: ["Final"]},
             { code: "DES232", videoName: "Final Part 1", path: "https://youtu.be/8TbGEQZvRwI", tag: ["Final"]},
             { code: "DES232", videoName: "Final Part 2", path: "https://youtu.be/vReRvOKcpEw", tag: ["Final"]},
-            { code: "IES302", videoName: "Final", path: "https://youtu.be/aQNCDIGJsXo", tag: ["Final"]}
+            { code: "IES302", videoName: "Final", path: "https://youtu.be/aQNCDIGJsXo", tag: ["Final"]},
+            { code: "DES229", videoName: "Prototype Presentation", path: "https://youtu.be/sgEfKTLMXR4", tag: ["Project", "Presentation"]}
         ]
     },{
         id: "y3t1",
@@ -59,6 +68,7 @@ const videoLists = [
             { code: "DES331", videoName: "Final Part 1", path: "https://youtu.be/X67JUB4ObTM", tag: ["Final"]},
             { code: "DES331", videoName: "Final Part 2", path: "https://youtu.be/8ilGaybOIvE", tag: ["Final"]},
             { code: "DES331", videoName: "Final Part 3", path: "https://youtu.be/sEC_KNnhpMA", tag: ["Final"]},
+            { code: "CSS325", videoName: "EATERIO Final Presentation", path: "https://youtu.be/bWRmjVOXv8g", tag: ["Project", "Presentation"]}
         ]
     },{
         id: "y3t2",
@@ -73,6 +83,7 @@ const videoLists = [
             { code: "DES329", videoName: "Final", path: "https://youtu.be/W4hGU9tSI8o", tag: ["Final"]},
             { code: "DES429", videoName: "Final", path: "https://youtu.be/ityg-yYrn0o", tag: ["Final"]},
             { code: "DES422", videoName: "Final Project Presentation", path: "https://youtu.be/FX8R-0OA_JE", tag: ["Project", "Presentation"]},
+            { code: "DES332", videoName: "Final Project Presentation", path: "https://youtu.be/oTujbHoEt2g", tag: ["Project", "Presentation"]},
         ]   
     }
 ]
