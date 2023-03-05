@@ -6,7 +6,7 @@ const albums = [
         basePath: "playtime",
         first: 1,
         last: 27,
-        excluded: [1, 5, 6]
+        excluded: [1, 5, 6, 10, 11, 12]
     },{
         id: 2,
         name: "74th Chula-Thammasat Traditional Football Match 2020",
