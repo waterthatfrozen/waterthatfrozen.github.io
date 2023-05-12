@@ -2,7 +2,7 @@ const education = [
     {
         degree:`Bachelor of Engineering (Digital Engineering)`,
         school: `<a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology (SIIT), Thammasat University.</a>`,
-        year: `August 2019 - Present (Expected Graduation: May 2023)`,
+        year: `August 2019 - May 2023`,
         gpa: `3.93/4.00`,
         detail: `- Major in Application software development. <br/>
         - Four-year continuous full scholarship recipient <br/>
@@ -22,10 +22,17 @@ const education = [
 
 const work = [
     {
+        position: `Associate Software Engineer`,
+        company: `Agoda Services Co., Ltd.`,
+        year: `May 2023 - Present`,
+        detail: `Work as a part of backend software team within FinTech domain`,
+        link: null
+    },
+    {
         position: `Software Engineer Intern`,
         company: `Agoda Services Co., Ltd.`,
-        year: `January 2023 - Present`,
-        detail: `Internship in backend software development team.`,
+        year: `January 2023 - April 2023`,
+        detail: `Internship in backend software development team within FinTech domain.`,
         link: null
     },
     {
