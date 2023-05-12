@@ -57,6 +57,14 @@ const albums = [
         excluded: []
     },{
         id: 8,
+        name: "SIIT Insight Camp 2023",
+        description: "April 8-9, 2023. Sirindhorn International Institute of Technology, Thammasat University Rangsit Campus, Pathum Thani, Thailand.",
+        basePath: "insightcamp2023",
+        first: 1,
+        last: 12,
+        excluded: []
+    },{
+        id: 9,
         name: "Graphics Design",
         description: "Here are my graphics designed for some of university events and activities.",
         basePath: "graphics",
