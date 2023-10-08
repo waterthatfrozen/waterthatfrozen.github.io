@@ -1,6 +1,6 @@
 const education = [
     {
-        degree:`Bachelor of Engineering (Digital Engineering)`,
+        degree:`Bachelor of Engineering (Digital Engineering), First-class Honors`,
         school: `<a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology (SIIT), Thammasat University.</a>`,
         year: `August 2019 - May 2023`,
         gpa: `3.93/4.00`,
@@ -53,6 +53,15 @@ const work = [
 ];
 
 const publication = [
+    {
+        title: `Data-centric Smart Street Light Monitoring and Visualization Platform for Campus Management`,
+        type: `International Journal Article`,
+        journal: `Journal of Information and Communication Convergence Engineering 2023; 21(3): 216-224`,
+        publisher: `Korea Institute of Information and Communication Engineering`,
+        publishedDate: `September 2023`,
+        doi: `10.56977/jicce.2023.21.3.216`,
+        link: `https://www.jicce.org/journal/view.html?uid=1231`   
+    },
     {
         title: `Automated Street Light Adjustment System on Campus with AI-Assisted Data Analytics`,
         type: `International Journal Article`,
