@@ -16,6 +16,13 @@ a {
     scroll-margin-top: 6em;
 }
 
+p>a, h5>a, h6>a, span>a {
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 3px;
+    color: #000;
+    scroll-margin-top: 6em;
+}
+
 div{
     scroll-margin-top: 6em;
 }

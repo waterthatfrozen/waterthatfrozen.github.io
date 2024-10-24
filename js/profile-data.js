@@ -25,14 +25,21 @@ const work = [
         position: `Associate Software Engineer`,
         company: `Agoda Services Co., Ltd.`,
         year: `May 2023 - Present`,
-        detail: `Work as a part of backend software team within FinTech domain`,
+        detail: `-	Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
+                 -	Built a payout flow to support the acceptance and expansion of virtual credit card usage to hotel suppliers in Japan.<br/>
+                 -	Modified the current system to support variable payout date with various conditions based on demand of each supplier.<br/>
+                 -	Improved internal financial backoffice operation system with modernized services and user interface for smoother agents' operation.<br/>
+                 -	Integrated virtual credit card for payout usage to third-party vendors and activities suppliers with full reconciliation process.`,
         link: null
     },
     {
         position: `Software Engineer Intern`,
         company: `Agoda Services Co., Ltd.`,
         year: `January 2023 - April 2023`,
-        detail: `Internship in backend software development team within FinTech domain.`,
+        detail: `-	Joined in the Fintech Payout team, facilitate correct and on-time payment from company to supplier with reconciliation ability.<br/>
+                 -	Implemented database credentials rotation of legacy services with Hashicorp's Vault, improving the security of service and financial data.<br/>
+                 -	Onboarded critical services in the domain to company's new private cloud architecture with Docker and Kubernetes cluster.<br/>
+                 -	Conducted knowledge sharing session on private cloud to Fintech members and managers.`,
         link: null
     },
     {
