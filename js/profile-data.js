@@ -90,22 +90,38 @@ const publication = [
 
 const award = [
     {
+        year: "2024",
+        titles: [
+            "Top student in the graduating class, Digital Engineering Curriculum, Academic Excellence Awards (Gold Medal)",
+            "Highest rank of Senior class, Digital Engineering Curriculum, Academic Excellence Award"
+        ]
+    },
+    {
+        year: "2023",
+        titles: [
+            "Highest rank of Junior class, Digital Engineering Curriculum, Academic Excellence Award"
+        ]
+    },
+    {
         year: "2022",
         titles: [
             "The Runner-Up Student Paper Award, The 17th International Joint Symposium on Artificial Intelligence and Natural Language Processing (iSAI-NLP 2022)",
-            "Winner, SIIT Hackathon 2022, SIIT and Thairun"
+            "Winner, SIIT Hackathon 2022, SIIT and Thairun",
+            "Highest rank of Sophomore class, Digital Engineering Curriculum, Academic Excellence Award of Academic Year 2020"
         ]
     },{
         year: "2019",
         titles: [
-            "Second Runner-up, SIIT Hackathon 2019"
+            "Second Runner-up, SIIT Hackathon 2019",
+            "Scholarship Recipient, SIIT 4 Year Continuous Scholarship (OSP: Outstanding Student Program)"
         ]
     },{
         year: "2018",
         titles: [
             "First Runner-up, National Software Contest 2018, Student Application Software Category",
-            "Second Camp, POSN Computer Olympiad Camp, Prince of Songkhla University, Hat Yai Campus",
-            "Silver Medal, Web Application Development Competition, National Finals of Student Arts and Crafts Fair 2018"
+            "First and Second Camp, POSN Computer Olympiad Camp, Prince of Songkhla University, Hat Yai Campus",
+            "Silver Medal, Web Application Development Competition, National Finals of Student Arts and Crafts Fair 2018",
+            "Project Presenter and Participant, Thailand-Japan Student Science Fair (TJ-SSF) 2018"
         ]
     },{
         year: "2017",
@@ -119,7 +135,9 @@ const volunteerExperience = [
     {
         year: "2023",
         titles: [
-            "Instructor, SIIT Photo and Media Club Workshop 2023"
+            "Instructor, SIIT Photo and Media Club Workshop 2023",
+            "Guest Speaker, SIIT Insight Camp 2023",
+            "Agoda Fintech CSR Day 2023"
         ]
     },{
         year: "2022",
