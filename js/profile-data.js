@@ -172,10 +172,10 @@ const volunteerExperience = [
 const skill = [
     {
         category: "Languages",
-        items: [ "Thai", "English"]
+        items: [ "Thai (Native)", "English (IELTS 7.5)"]
     },{
         category: "Programming Languages",
-        items: [ "C/C++", "C#", "Java", "Python", "JavaScript", "HTML", "CSS", "SQL", "PHP", "MATLAB", "Scala"]
+        items: [ "C/C++", "C#", "Java", "Python", "JavaScript", "HTML", "CSS", "SQL", "PHP", "MATLAB", "Scala", "Kotlin"]
     },{
         category: "Frameworks",
         items: [ "Git/GitHub","Bootstrap", "Node.js", "Express.js", "jQuery", "MySQL", "MongoDB", "MS SQL Server", "Microsoft Azure", "React Native"]
