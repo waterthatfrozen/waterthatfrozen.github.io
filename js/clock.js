@@ -1,8 +1,37 @@
-let currentTime = new Date();
-const copyrightSpan = document.getElementById("copyright");
-copyrightSpan.innerHTML = `&copy; ${currentTime.getFullYear()} Paphana Yiwsiw`;
+// Generate zone selection
+let ALL_ZONE = ZONE_INFO.flatMap(z => z.zoneKey),
+    zoneSelectorBox = document.getElementById("zone-selector");
+
+console.log(ALL_ZONE);
+let zoneSelectorLinks = ALL_ZONE.flatMap(z => `<a href="?zone=${z}" class="text-white">${z}</a>`);
+zoneSelectorBox.innerHTML = zoneSelectorLinks.join(' | ');
+console.log(zoneSelectorLinks);
+
+
+// Zone selection part
+// ZONE_INFO is defined in clock-zone.js file
+let urlParam = window.location.search;
+let searchParam = new URLSearchParams(urlParam);
+let selectedZoneKey = searchParam.get("zone").toUpperCase();
+if (selectedZoneKey === null || 
+    ZONE_INFO.filter(zone => zone.zoneKey === selectedZoneKey).length == 0){
+        selectedZoneKey = 'TH-BKK';
+}
+let selectedZone = ZONE_INFO.filter(zone => zone.zoneKey === selectedZoneKey)[0];
+
+let selectedTimezone = selectedZone.timeZone,
+    timezoneURL = selectedTimezone.replace('/','%2F'),
+    selectedLat = selectedZone.lat,
+    selectedLong = selectedZone.long;
+
+document.getElementById("zone-emoji").innerText = selectedZone.zoneEmoji;
+document.getElementById("zone-name").innerText = selectedZone.zoneName;
 
 // clock part
+let currentTime = new Date();
+// const copyrightSpan = document.getElementById("copyright");
+// copyrightSpan.innerHTML = `&copy; ${currentTime.getFullYear()} Paphana Yiwsiw`;
+
 let dateBox = document.getElementById("clock-date");
 let hourBox = document.getElementById("clock-hour");
 let minuteBox = document.getElementById("clock-minute");
@@ -12,38 +41,39 @@ let daySideBox = document.getElementById("clock-dayside");
 function setClock() {
     currentTime = new Date();
 
-    let timeString = currentTime.toLocaleTimeString("en-UK", {timeZone: "Asia/Bangkok", hour12: false}).split(":");
+    let timeString = currentTime.toLocaleTimeString("en-UK", {timeZone: selectedTimezone, hour12: false}).split(":");
     hourBox.innerText = timeString[0];
     minuteBox.innerText = timeString[1];
     secondBox.innerText = timeString[2];
 
-    let dateString = dateBox.innerText = `${currentTime.toLocaleDateString("en-UK", {timeZone: "Asia/Bangkok", dateStyle: "full"})}`.split(' ');
+    let dateString = dateBox.innerText = `${currentTime.toLocaleDateString("en-UK", {timeZone: selectedTimezone, dateStyle: "full"})}`.split(' ');
     dateBox.innerText = `${dateString[0]}, ${dateString[2]} ${dateString[1]}, ${dateString[3]}`;
 
-    let daySide = currentTime.toLocaleDateString("en-UK", {timeZone: "Asia/Bangkok", dayPeriod: "long"}).split(", ")[1];
-    daySideBox.classList = (currentTime.getHours() >= 6 || currentTime.getHours() <= 18) 
-                            ? "ms-3 bi bi-moon-stars fs-4" 
-                            : "ms-3 bi bi-sun fs-4";
+    daySideBox.classList = (timeString[0] >= '06' && timeString[0] <= '18') 
+                            ? "ms-3 bi bi-sun fs-4" 
+                            : "ms-3 bi bi-moon-stars fs-4";
 };
 
 setClock();
 setInterval(setClock, 1000);
 
 // weather part
-let weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=13.754&longitude=100.5014&current=temperature_2m,relative_humidity_2m,apparent_temperature,rain,cloud_cover,wind_speed_10m,wind_direction_10m&timezone=Asia%2FBangkok&forecast_days=1`;
-let tempBox = document.getElementById("weather-temp");
-let feelLikeBox = document.getElementById("weather-feel-like");
-let humidityBox = document.getElementById("weather-humidity");
-let rainBox = document.getElementById("weather-rain");
-let cloudBox = document.getElementById("weather-cloud");
-let windSpeedBox = document.getElementById("weather-wind-speed");
-let windDirBox = document.getElementById("weather-wind-direction");
-fetch(weatherUrl)
+let weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${selectedLat}&longitude=${selectedLong}&current=temperature_2m,relative_humidity_2m,apparent_temperature,rain,cloud_cover,wind_speed_10m,wind_direction_10m&timezone=${timezoneURL}&forecast_days=1`,
+    tempBox = document.getElementById("weather-temp"),
+    feelLikeBox = document.getElementById("weather-feel-like"),
+    humidityBox = document.getElementById("weather-humidity"),
+    rainBox = document.getElementById("weather-rain"),
+    cloudBox = document.getElementById("weather-cloud"),
+    windSpeedBox = document.getElementById("weather-wind-speed"),
+    windDirBox = document.getElementById("weather-wind-direction"),
+    lastUpdatedBox = document.getElementById("weather-last-updated");
+
+function setWeather() {
+    fetch(weatherUrl)
     .then((res) => {
         return res.json();
     })
     .then((data) => {
-        console.log(data);
         let currentWeather = data.current;
         let currentUnits = data.current_units;
         tempBox.innerHTML = `${currentWeather.temperature_2m} <span class="fs-7">${currentUnits.temperature_2m}</span>`;
@@ -53,7 +83,12 @@ fetch(weatherUrl)
         cloudBox.innerHTML = `${currentWeather.cloud_cover} <span class="fs-7">${currentUnits.cloud_cover}</span>`;
         windSpeedBox.innerHTML = `${currentWeather.wind_speed_10m} <span class="fs-7">${currentUnits.wind_speed_10m}</span>`;
         windDirBox.innerHTML = `at ${currentWeather.wind_direction_10m}<span class="fs-7">${currentUnits.wind_direction_10m}</span>`;
+        lastUpdatedBox.innerHTML = `Last Updated at ${currentTime.toLocaleTimeString("en-UK", {timeZone: selectedTimezone, hour12: false})}`
     }) 
     .catch((err) => {
         console.error("Weather Error: " + err);
     });
+};
+
+setWeather();
+setInterval(setWeather, 60 * 60 * 1000); // refresh every hour

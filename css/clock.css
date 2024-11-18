@@ -195,3 +195,14 @@ img{
 .fs-7{
     font-size: 14px;
 }
+
+#zone-selector, #zone-selector>a{
+    color: white !important;
+    opacity: 50% !important;
+}
+
+#zone-selector>a:hover{
+    color: white !important;
+    opacity: 100% !important;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
