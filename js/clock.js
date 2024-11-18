@@ -12,9 +12,9 @@ console.log(zoneSelectorLinks);
 // ZONE_INFO is defined in clock-zone.js file
 let urlParam = window.location.search;
 let searchParam = new URLSearchParams(urlParam);
-let selectedZoneKey = searchParam.get("zone").toUpperCase();
+let selectedZoneKey = searchParam.get("zone");
 if (selectedZoneKey === null || 
-    ZONE_INFO.filter(zone => zone.zoneKey === selectedZoneKey).length == 0){
+    ZONE_INFO.filter(zone => zone.zoneKey === selectedZoneKey.toUpperCase()).length == 0){
         selectedZoneKey = 'TH-BKK';
 }
 let selectedZone = ZONE_INFO.filter(zone => zone.zoneKey === selectedZoneKey)[0];
