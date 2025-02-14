@@ -4,15 +4,16 @@ const education = [
         school: `<a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology (SIIT), Thammasat University.</a>`,
         year: `August 2019 - May 2023`,
         gpa: `3.93/4.00`,
-        detail: `- Major in Application software development. <br/>
+        detail: `- Major in Application Software Development. <br/>
         - Four-year continuous full scholarship recipient <br/>
         - Outstanding Activitiy Performance scholarship recipient <br/>
         - Vice president of Digital Engineering Student Committee, Class year 2019 (DE1 SIIT28)<br/>
-        - Achieved first rank of class year in the curriculum duing academic year 2020 and 2021.`,
+        - Achieved first rank of class year in the curriculum duing academic year 2020, 2021, 2022.<br/>
+        - Received Bhumibol Scholarship Academic Excellence Award of Academic Year 2022.`,
         link: null
     },{
         degree:`High School`,
-        school: `Princess Chulaborn Science High School, Trang`,
+        school: `Princess Chulaborn Science High School Trang`,
         year: `May 2016 - February 2019`,
         gpa: `3.71/4.00`,
         detail: `Science and Mathematics Program`,
@@ -25,7 +26,8 @@ const work = [
         position: `Associate Software Engineer`,
         company: `Agoda Services Co., Ltd.`,
         year: `May 2023 - Present`,
-        detail: `-	Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
+        detail: `-  Joined in the Payout Services team, focusing on improving and revamping the payout system on a new architecture.<br/>
+                 -  Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
                  -	Built a payout flow to support the acceptance and expansion of virtual credit card usage to hotel suppliers in Japan.<br/>
                  -	Modified the current system to support variable payout date with various conditions based on demand of each supplier.<br/>
                  -	Improved internal financial backoffice operation system with modernized services and user interface for smoother agents' operation.<br/>
@@ -132,6 +134,12 @@ const award = [
 ]
 
 const volunteerExperience = [
+    {
+        year: "2024",
+        titles: [
+            "Volunteer, Agoda Tech Camp Day 2024"
+        ]
+    },
     {
         year: "2023",
         titles: [

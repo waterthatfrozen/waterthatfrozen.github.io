@@ -6,6 +6,7 @@ const project = [
         description: `Web application development for monitoring and controlling the smart lighting system in campus, and data analytics for more efficient energy usage and sufficient lighting in the campus.<br/>
         Developed with Express.js, jQuery, and Bootstrap.<br/>
         <i class="bi bi-award-fill"></i> The Runner-Up Student Paper Award, iSAI-NLP 2022<br/>
+        <a href="https://www.jicce.org/journal/view.html?uid=1231" target="_blank" class="text-decoration-none"><i class="bi bi-journal-text"></i> International Journal Article on JICCE</a><br/>
         <a href="https://www.mdpi.com/1424-8220/23/4/1853" target="_blank" class="text-decoration-none"><i class="bi bi-journal-text"></i> International Journal Article on MDPI</a><br/>
         <a href="https://ieeexplore.ieee.org/document/9960257" target="_blank" class="text-decoration-none"><i class="bi bi-journal-text"></i> International Conference Paper on IEEE Xplore</a>`,
         link: `<a href="https://www.github.com/waterthatfrozen/Smart-City" target="_blank" class="text-decoration-none"><i class="bi bi-github"></i> GitHub: waterthatfrozen/Smart-City</a>`

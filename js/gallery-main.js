@@ -8,6 +8,11 @@ function createListItem(item){
 
 function createMainItemCard(list){
     return `<ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <a href="graduation.html" target="_self" class="">
+                <i class="bi bi-image"></i>&MediumSpace; Thammasat University Graduation Ceremony and Rehearsals 2022-2023
+            </a>
+        </li>
         ${list.map(item => createListItem(item)).join("")}
     </ul>`;
 }

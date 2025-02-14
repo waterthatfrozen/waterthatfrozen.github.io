@@ -10,21 +10,25 @@ body {
     scroll-behavior: smooth;
 }
 
+p, li, h5 {
+    color: #222;
+}
+
 a {
     text-decoration: none;
-    color: #000;
+    color: #222;
     scroll-margin-top: 6em;
 }
 
 p>a, h5>a, h6>a, span>a {
     text-decoration: underline dotted 1px;
     text-underline-offset: 3px;
-    color: #000;
+    color: #222;
     scroll-margin-top: 6em;
 }
 
-p>a:hover, h5>a:hover, h6>a:hover, span>a:hover {
-    color: #a4542a;
+p>a:hover, h5>a:hover, h6>a:hover, span>a:hover, li>a:hover {
+    color: #49613f;
 }
 
 div{
@@ -50,7 +54,7 @@ div{
 h1,
 h2,
 h3 {
-    color: #a4542a !important;
+    color: #49613f !important;
 }
 
 h5{
@@ -82,8 +86,8 @@ h5{
 }
 
 .box-link:hover{
-    background-color: #a4542a;
-    border: 1px solid #a4542a;
+    background-color: #49613f;
+    border: 1px solid #49613f;
     color: #fff;
 }
 
@@ -107,7 +111,7 @@ h5{
 }
 
 .bg-navy{
-    background-color: #a4542a;
+    background-color: #49613f;
     color: #fff;
 }
 
@@ -132,7 +136,7 @@ a.hover{
 }
 
 a.hover:hover{
-    background-color: #a4542a;
+    background-color: #49613f;
     color: #fff !important;
 }
 
