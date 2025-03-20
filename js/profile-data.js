@@ -23,11 +23,17 @@ const education = [
 
 const work = [
     {
+        position: 'Software Engineer',
+        company: 'Agoda Services Co., Ltd.',
+        year: 'February 2025 - Present',
+        detail: `Joined in the Payout Services team, focusing on improving and revamping the payout system on a new architecture.<br/>`,
+        link: null
+    },
+    {
         position: `Associate Software Engineer`,
         company: `Agoda Services Co., Ltd.`,
-        year: `May 2023 - Present`,
-        detail: `-  Joined in the Payout Services team, focusing on improving and revamping the payout system on a new architecture.<br/>
-                 -  Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
+        year: `May 2023 - January 2025`,
+        detail: `-  Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
                  -	Built a payout flow to support the acceptance and expansion of virtual credit card usage to hotel suppliers in Japan.<br/>
                  -	Modified the current system to support variable payout date with various conditions based on demand of each supplier.<br/>
                  -	Improved internal financial backoffice operation system with modernized services and user interface for smoother agents' operation.<br/>
@@ -91,6 +97,12 @@ const publication = [
 ]
 
 const award = [
+    {
+        year: "2025",
+        titles: [
+            "Bhumibol Scholarship Academic Excellence Award, Graduate Class of Academic Year 2022",
+        ]
+    },
     {
         year: "2024",
         titles: [
@@ -183,12 +195,12 @@ const skill = [
         items: [ "Thai (Native)", "English (IELTS 7.5)"]
     },{
         category: "Programming Languages",
-        items: [ "C/C++", "C#", "Java", "Python", "JavaScript", "HTML", "CSS", "SQL", "PHP", "MATLAB", "Scala", "Kotlin"]
+        items: [ "JavaScript", "TypeScript", "Scala", "Kotlin", "C/C++", "C#", "Java", "Python", "HTML", "CSS", "SQL", "PHP", "MATLAB"]
     },{
-        category: "Frameworks",
-        items: [ "Git/GitHub","Bootstrap", "Node.js", "Express.js", "jQuery", "MySQL", "MongoDB", "MS SQL Server", "Microsoft Azure", "React Native"]
+        category: "Frameworks and Tools",
+        items: [ "Git/GitHub/GitLab", "Gitlab CI", "Bootstrap", "Node.js", "Express.js", "jQuery", "MySQL", "MongoDB", "MS SQL Server", "Microsoft Azure", "React Native", "React", "SpringBoot", "Spark ETL", "Docker", "Kubernetes", "Hashicorp Vault", "JIRA", "Confluence", "Grafana", "Kafka"]
     },{
         category: "Other",
-        items: ["Photography", "Video Editing", "Graphic Design", "Microsoft Office", "Adobe Photoshop", "Adobe Premiere Pro", "Figma", "Event Organization", "Public Relations", "Presentation"]
+        items: ["Photography", "Video Editing", "Graphic Design", "Microsoft Office", "Adobe Photoshop", "Adobe Premiere Pro", "Figma", "Event Organization", "Public Relations", "Presentation", "Teaching", "Investigation"]
     }
 ];
