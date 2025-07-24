@@ -10,6 +10,40 @@ body {
     scroll-behavior: smooth;
 }
 
+/* Vertical centering for specific pages only */
+body.center-layout {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body.center-layout #main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 0;
+    padding-top: 60px; /* Account for fixed header */
+    padding-bottom: 60px; /* Account for fixed footer */
+}
+
+/* Responsive adjustments for smaller screens on centered pages */
+@media (max-height: 600px) {
+    body.center-layout #main {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-height: 400px) {
+    body.center-layout #main {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
 p, li, h5 {
     color: #222;
 }
