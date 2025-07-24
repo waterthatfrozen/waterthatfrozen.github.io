@@ -61,6 +61,34 @@
             <a href="#pdf-list" target="_self">
                 <h3 class="fw-bold text-danger">Files List</h3>
             </a>
+            
+            <!-- Filter Section -->
+            <div class="filter-section mb-4">
+                <div class="filter-header" id="filterHeader">
+                    <div>
+                        <h5 class="fw-bold text-danger mb-0">
+                            <i class="bi bi-tags"></i> Filter by Tags
+                            <span class="filter-counter ms-2 text-muted" id="filterCounter"></span>
+                        </h5>
+                    </div>
+                    <i class="bi bi-chevron-down collapse-icon" id="collapseIcon"></i>
+                </div>
+                <div class="filter-content" id="filterContent">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="logic-toggle" id="logicToggle">
+                            <span class="logic-option active" data-logic="and">Restrictive (AND)</span>
+                            <span class="logic-option" data-logic="or">Inclusive (OR)</span>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm rounded-pill" id="clearAllTags">
+                            <i class="bi bi-arrow-clockwise"></i> Reset Filter
+                        </button>
+                    </div>
+                    <div class="d-flex flex-wrap gap-2" id="tagFilters">
+                        <!-- Tag filter buttons will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
             <div id="pdf-list" class="mb-4">
             </div>
             <div id="end" class="pb-5"></div>
