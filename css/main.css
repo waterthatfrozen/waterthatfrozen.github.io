@@ -15,6 +15,7 @@ body.center-layout {
     margin: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 body.center-layout #main {
@@ -23,24 +24,53 @@ body.center-layout #main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 0;
+    min-height: calc(100vh - 120px); /* Viewport height minus header and footer space */
     padding-top: 60px; /* Account for fixed header */
-    padding-bottom: 60px; /* Account for fixed footer */
+    padding-bottom: 80px; /* Extra space for fixed footer + safe area */
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scrolling when content overflows */
+}
+
+/* Better overflow handling for content that's too tall */
+body.center-layout #main > * {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Ensure scrollable content in center layout */
+body.center-layout #main #intro,
+body.center-layout #main .content-section {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px; /* Extra space before footer area */
 }
 
 /* Responsive adjustments for smaller screens on centered pages */
 @media (max-height: 600px) {
     body.center-layout #main {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 70px;
         justify-content: flex-start;
+        min-height: calc(100vh - 100px);
     }
 }
 
 @media (max-height: 400px) {
     body.center-layout #main {
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
+        justify-content: flex-start;
+        min-height: calc(100vh - 80px);
+    }
+}
+
+/* Ensure content doesn't get stuck behind footer on very small screens */
+@media (max-height: 300px) {
+    body.center-layout #main {
+        padding-top: 30px;
+        padding-bottom: 50px;
+        justify-content: flex-start;
+        min-height: calc(100vh - 60px);
     }
 }
 
@@ -83,6 +113,8 @@ div{
     bottom: 0;
     width: 100%;
     line-height: 20px;
+    z-index: 50; /* Ensure footer stays above content but below modals */
+    background: inherit; /* Ensure footer has proper background */
 }
 
 h1,
