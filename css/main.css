@@ -723,6 +723,146 @@ img{
     transform: scale(0.98);
 }
 
+/* PDF Filter Section Styles */
+.filter-section {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.filter-header {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filter-header:hover {
+    color: #dc3545;
+}
+
+.filter-content {
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.filter-content.collapsed {
+    max-height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+}
+
+.collapse-icon {
+    transition: transform 0.3s ease;
+}
+
+.collapsed .collapse-icon {
+    transform: rotate(-90deg);
+}
+
+.filter-tag {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    user-select: none;
+    width: 140px;
+    height: 38px;
+    text-align: center;
+    background-color: white;
+    color: #495057;
+}
+
+.filter-tag:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+    color: #212529;
+}
+
+.filter-tag.active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.filter-tag.active .count {
+    background: rgba(255,255,255,0.2) !important;
+    color: white !important;
+}
+
+.filter-tag .count {
+    background: #e9ecef;
+    color: #495057;
+    border-radius: 10px;
+    padding: 2px 6px;
+    font-size: 12px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.filter-counter {
+    font-weight: normal;
+}
+
+/* File list item filtering */
+.list-group-item.filtered-out {
+    display: none;
+}
+
+.semester-section.filtered-out {
+    display: none;
+}
+
+/* Empty state */
+.filter-empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Logic toggle */
+.logic-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.logic-option {
+    padding: 4px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6c757d;
+    user-select: none;
+}
+
+.logic-option.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.filter-counter {
+    font-size: 14px !important;
+    font-weight: 400;
+}
+
 /* Clean mobile interface */
 @media (hover: none) and (pointer: coarse) {
     
