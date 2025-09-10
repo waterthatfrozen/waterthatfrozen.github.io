@@ -27,7 +27,7 @@ let modalOpen = false;
 function createImageBoxes(album){
     let imageBoxes = "";
     let imageCount = 0;
-    const immediateLoadCount = 6; // Load first 6 images immediately
+    const immediateLoadCount = 0; // Load first 0 images immediately
     
     // Store current album for modal navigation
     currentAlbum = album;

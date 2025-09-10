@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPC1LX6EN6"></script>
+    <script async src="./js/gtag.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Demo | Paphana Yiwsiw</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Manrope:wght@300;400;700&family=Noto+Sans+Thai:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js" defer></script>
+</head>
+
+<body class="text-start h-100">
+    <header class="bg-navy nav-header-bar">
+        <div class="container d-flex flex-row justify-content-between py-2">
+            <span class="small"><a href="/" class="text-white"><i class="bi bi-arrow-left"></i> Home</a></span>
+            <a class="small text-white" id="top-button" href="#">HTTP Request Demo</a>
+        </div>
+    </header>
+
+    <main class="my-5" id="main">
+        <div class="container d-flex w-100 mb-5 p-4 mx-auto flex-column">
+            <div class="d-inline-block mt-md-3">
+                <a href="#" target="_self">
+                    <h1 class="fw-bold"><i class="bi bi-cloud-arrow-down"></i><br/>HTTP Request Demo</h1>
+                </a>
+                <p>
+                    This page sends HTTP GET requests to two demo endpoints and shows the responses below.
+                </p>
+                <div class="mb-3 d-flex gap-2">
+                    <button id="fetchAll" class="btn btn-sm btn-dark"><i class="bi bi-play-circle"></i> Fetch All</button>
+                    <button id="clearAll" class="btn btn-sm btn-outline-secondary"><i class="bi bi-x-circle"></i> Clear</button>
+                </div>
+                <p class="small">
+                    Home of BFF: <a href="https://fir-bem-sep25.firebaseapp.com" target="_blank">https://fir-bem-sep25.firebaseapp.com</a><br/>
+                    API documentation: <a href="https://fir-bem-sep25.firebaseapp.com/api-docs" target="_blank">https://fir-bem-sep25.firebaseapp.com/api-docs</a>
+                </p>
+            </div>
+
+            <div class="mb-4">
+                <h5 class="fw-bold">GET /demo/hello-world</h5>
+                <div class="border rounded p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <code class="text-muted">https://fir-bem-sep25.firebaseapp.com/api/v1/demo/hello-world</code>
+                        <div class="d-flex gap-2">
+                            <button id="btnHello" class="btn btn-sm btn-success"><i class="bi bi-arrow-repeat"></i> Fetch</button>
+                        </div>
+                    </div>
+                    <p class="small text-muted mb-2">
+                        Returns a simple greeting payload. This endpoint is implemented as a proxy to a smart city service in a lighting project:
+                        https://siit-smart-city.azurewebsites.net/api/helloWorld
+                        to demonstrate a Backend-for-Frontend (BFF) pattern and microservice proxying.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <span id="statusHello" class="small text-muted"></span>
+                    </div>
+                    <pre id="outputHello" class="bg-light p-2 rounded" style="min-height: 80px; white-space: pre-wrap; word-break: break-word;">(no data)</pre>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h5 class="fw-bold">GET /demo/intro</h5>
+                <div class="border rounded p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <code class="text-muted">https://fir-bem-sep25.firebaseapp.com/api/v1/demo/intro</code>
+                        <div class="d-flex gap-2">
+                            <button id="btnIntro" class="btn btn-sm btn-success"><i class="bi bi-arrow-repeat"></i> Fetch</button>
+                        </div>
+                    </div>
+                    <p class="small text-muted mb-2">
+                        Returns a short introduction payload from the demo service. <br/>
+                        Useful for connectivity checks and sample JSON structure.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <span id="statusIntro" class="small text-muted"></span>
+                    </div>
+                    <pre id="outputIntro" class="bg-light p-2 rounded" style="min-height: 80px; white-space: pre-wrap; word-break: break-word;">(no data)</pre>
+                </div>
+            </div>
+
+            <div id="end" class="pb-5"></div>
+        </div>
+    </main>
+
+    <!-- Sticky footer -->
+    <footer class="footer bg-dark">
+        <div class="container d-flex flex-row justify-content-between p-2">
+            <span class="text-white small" id="copyright"></span>
+            <span class="text-white-50 small" id="time">Getting time...</span>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const endpoints = {
+                hello: 'https://fir-bem-sep25.firebaseapp.com/api/v1/demo/hello-world',
+                intro: 'https://fir-bem-sep25.firebaseapp.com/api/v1/demo/intro'
+            };
+
+            /**
+             * Fetch helper: shows status, tries JSON first then text, handles errors.
+             */
+            async function fetchAndRender(url, statusEl, outputEl) {
+                statusEl.textContent = 'Fetching...';
+                statusEl.classList.remove('text-danger');
+                statusEl.classList.add('text-muted');
+                outputEl.textContent = '';
+                outputEl.classList.remove('text-danger');
+                try {
+                    const startedAt = new Date();
+                    const response = await fetch(url, { method: 'GET', mode: 'cors' });
+                    const elapsedMs = new Date() - startedAt;
+
+                    const contentType = response.headers.get('content-type') || '';
+                    let bodyText = '';
+                    try {
+                        if (contentType.includes('application/json')) {
+                            const json = await response.json();
+                            bodyText = JSON.stringify(json, null, 2);
+                        } else {
+                            bodyText = await response.text();
+                        }
+                    } catch (parseErr) {
+                        bodyText = '[Unable to parse response body]';
+                    }
+
+                    statusEl.textContent = `Status: ${response.status} ${response.statusText} • ${elapsedMs} ms`;
+                    outputEl.textContent = bodyText && bodyText.length > 0 ? bodyText : '(empty response)';
+
+                    if (!response.ok) {
+                        statusEl.classList.remove('text-muted');
+                        statusEl.classList.add('text-danger');
+                    } else {
+                        statusEl.classList.remove('text-danger');
+                        statusEl.classList.add('text-muted');
+                    }
+                } catch (err) {
+                    statusEl.textContent = 'Network error';
+                    statusEl.classList.remove('text-muted');
+                    statusEl.classList.add('text-danger');
+                    outputEl.textContent = String(err);
+                }
+            }
+
+            // Bind UI
+            const btnHello = document.getElementById('btnHello');
+            const btnIntro = document.getElementById('btnIntro');
+            const fetchAll = document.getElementById('fetchAll');
+            const clearAll = document.getElementById('clearAll');
+
+            const statusHello = document.getElementById('statusHello');
+            const outputHello = document.getElementById('outputHello');
+            const statusIntro = document.getElementById('statusIntro');
+            const outputIntro = document.getElementById('outputIntro');
+
+            btnHello.addEventListener('click', function () {
+                fetchAndRender(endpoints.hello, statusHello, outputHello);
+            });
+            btnIntro.addEventListener('click', function () {
+                fetchAndRender(endpoints.intro, statusIntro, outputIntro);
+            });
+            fetchAll.addEventListener('click', function () {
+                fetchAndRender(endpoints.hello, statusHello, outputHello);
+                fetchAndRender(endpoints.intro, statusIntro, outputIntro);
+            });
+            clearAll.addEventListener('click', function () {
+                statusHello.textContent = '';
+                statusHello.classList.remove('text-danger');
+                statusHello.classList.add('text-muted');
+                outputHello.textContent = '(no data)';
+                outputHello.classList.remove('text-danger');
+
+                statusIntro.textContent = '';
+                statusIntro.classList.remove('text-danger');
+                statusIntro.classList.add('text-muted');
+                outputIntro.textContent = '(no data)';
+                outputIntro.classList.remove('text-danger');
+            });
+
+            // Auto fetch on load to demonstrate immediately
+            window.addEventListener('DOMContentLoaded', function () {
+                fetchAll.click();
+            });
+        })();
+    </script>
+</body>
+
+</html>
+
+
