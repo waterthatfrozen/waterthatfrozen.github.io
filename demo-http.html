@@ -50,30 +50,8 @@
                     API documentation: <a href="https://fir-bem-sep25.firebaseapp.com/api-docs" target="_blank">https://fir-bem-sep25.firebaseapp.com/api-docs</a>
                 </p>
             </div>
-
             <div class="mb-4">
-                <h5 class="fw-bold">GET /demo/hello-world</h5>
-                <div class="border rounded p-3">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <code class="text-muted">https://fir-bem-sep25.firebaseapp.com/api/v1/demo/hello-world</code>
-                        <div class="d-flex gap-2">
-                            <button id="btnHello" class="btn btn-sm btn-success"><i class="bi bi-arrow-repeat"></i> Fetch</button>
-                        </div>
-                    </div>
-                    <p class="small text-muted mb-2">
-                        Returns a simple greeting payload. This endpoint is implemented as a proxy to a smart city service in a lighting project:
-                        https://siit-smart-city.azurewebsites.net/api/helloWorld
-                        to demonstrate a Backend-for-Frontend (BFF) pattern and microservice proxying.
-                    </p>
-                    <div class="d-flex gap-2">
-                        <span id="statusHello" class="small text-muted"></span>
-                    </div>
-                    <pre id="outputHello" class="bg-light p-2 rounded" style="min-height: 80px; white-space: pre-wrap; word-break: break-word;">(no data)</pre>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <h5 class="fw-bold">GET /demo/intro</h5>
+                <h5 class="fw-bold"><span class="text-success">GET</span> /demo/intro</h5>
                 <div class="border rounded p-3">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <code class="text-muted">https://fir-bem-sep25.firebaseapp.com/api/v1/demo/intro</code>
@@ -92,6 +70,26 @@
                 </div>
             </div>
 
+            <div class="mb-4">
+                <h5 class="fw-bold"><span class="text-success">GET</span> /demo/hello-world</h5>
+                <div class="border rounded p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <code class="text-muted">https://fir-bem-sep25.firebaseapp.com/api/v1/demo/hello-world</code>
+                        <div class="d-flex gap-2">
+                            <button id="btnHello" class="btn btn-sm btn-success"><i class="bi bi-arrow-repeat"></i> Fetch</button>
+                        </div>
+                    </div>
+                    <p class="small text-muted mb-2">
+                        Returns a simple greeting payload. This endpoint is implemented as a proxy to a smart city service in a lighting project:
+                        https://siit-smart-city.azurewebsites.net/api/helloWorld
+                        to demonstrate a Backend-for-Frontend (BFF) pattern and microservice proxying.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <span id="statusHello" class="small text-muted"></span>
+                    </div>
+                    <pre id="outputHello" class="bg-light p-2 rounded" style="min-height: 80px; white-space: pre-wrap; word-break: break-word;">(no data)</pre>
+                </div>
+            </div>
             <div id="end" class="pb-5"></div>
         </div>
     </main>
