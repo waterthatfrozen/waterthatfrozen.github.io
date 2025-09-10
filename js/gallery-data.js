@@ -9,7 +9,7 @@ const albums = [
         excluded: [1, 5, 6, 10, 11, 12]
     },{
         id: 2,
-        name: "74<sup>th</sup> Chula-Thammasat Traditional Football Match 2020",
+        name: "74th Chula-Thammasat Traditional Football Match 2020",
         description: "February 8, 2020. National Stadium, Bangkok, Thailand.",
         basePath: "cutuball74",
         first: 1,
