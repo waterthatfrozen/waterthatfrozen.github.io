@@ -1,7 +1,8 @@
 function createListItem(item){
+    let numberOfItems = item.last - item.first + 1 - (item.excluded.length);
     return `<li class="list-group-item">
         <a href="gallery-view.html?album=${item.id}" target="_self" class="">
-            <i class="bi bi-image"></i>&MediumSpace; ${item.name}
+            <i class="bi bi-image"></i>&MediumSpace; ${item.name} <span class="small text-secondary">(${numberOfItems} items)</span>
         </a>
     </li>`;
 }

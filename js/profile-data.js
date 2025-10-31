@@ -26,7 +26,7 @@ const work = [
         position: 'Software Engineer',
         company: 'Agoda Services Co., Ltd.',
         year: 'February 2025 - Present',
-        detail: `Joined in the Payout Services team, focusing on improving and revamping the payout system on a new architecture.<br/>`,
+        detail: `Joined in the Payout Services/Payout Partner Experiences team, focusing on improving and revamping the payout system on a new architecture.<br/>`,
         link: null
     },
     {

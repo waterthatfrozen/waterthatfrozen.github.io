@@ -95,6 +95,22 @@ const ZONE_INFO = [
         lat: -33.8678,
         long: 151.2073
     },
+    { 
+        zoneKey: 'ZA-CPT',
+        zoneName: 'South Africa - Cape Town',
+        zoneEmoji: '🇿🇦',
+        timeZone: 'Africa/Johannesburg',
+        lat: -33.9249,
+        long: 18.4241
+    },
+    { 
+        zoneKey: 'BR-RIO',
+        zoneName: 'Brazil - Rio de Janeiro',
+        zoneEmoji: '🇧🇷',
+        timeZone: 'America/Sao_Paulo',
+        lat: -22.9068,
+        long: -43.1729
+    },
 ];
 
 console.log("zone constants loaded");

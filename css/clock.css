@@ -8,7 +8,7 @@ body {
     margin-bottom: 30px;
     line-height: normal;
     scroll-behavior: smooth;
-    background-color: #333;
+    background-color: #000;
 }
 
 .noto-color-emoji-regular {
@@ -39,7 +39,7 @@ div{
 }
 
 .container {
-    max-width: 50em;
+    max-width: 70em;
 }
 
 .divider {
@@ -158,6 +158,7 @@ img{
 
 .fs-96{
     font-size: 96px;
+    line-height: 1.1; /* ensure full glyph box and align baselines */
 }
 
 .debug-border{
@@ -169,8 +170,9 @@ img{
 }
 
 .clock-box{
-    width: 95px;
+    min-width: 2ch;
     text-align: left;
+    white-space: nowrap;
 }
 
 .weather-box{
@@ -185,7 +187,7 @@ img{
 }
 
 .display-none{
-    display: none;
+    display: none !important;
 }
 
 .opacity-50 {
@@ -205,4 +207,100 @@ img{
     color: white !important;
     opacity: 100% !important;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
+
+/* Zone selector chips */
+#zone-selector{
+    display: none; /* chips will be replaced by dropdowns */
+}
+
+#zone-selector>a{
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #444;
+    border-radius: 999px;
+    background: #111;
+    opacity: 0.8 !important;
+}
+
+#zone-selector>a:hover{
+    background: #1a1a1a;
+    border-color: #666;
+}
+
+#zone-selector>a.active{
+    background: #a4542a;
+    border-color: #a4542a;
+    opacity: 1 !important;
+}
+
+/* Dual layout */
+#clock-dual-wrapper{
+    display: block;
+}
+
+@media (min-width: 768px){
+    #clock-dual-wrapper{ display: block; }
+    #clock-dual-wrapper.dual{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        column-gap: 32px;
+    }
+    #clock-dual-wrapper.dual .clock-section{
+        flex: 1 1 0;
+        width: calc(50% - 16px);
+    }
+    #clock-dual-wrapper.dual #clock2-section{ margin-top: 0; }
+    #clock-dual-wrapper.dual hr{ margin: 0.5rem 0 1rem 0; }
+}
+
+/* Dropdown selectors - transparent style */
+#zone-select-1, #zone-select-2{
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+    box-shadow: none !important;
+    vertical-align: middle;
+}
+
+#zone-select-1:focus, #zone-select-2:focus{
+    border-color: #666 !important;
+    box-shadow: none !important;
+}
+
+#zone-select-1 option, #zone-select-2 option{
+    background-color: #000;
+    color: #fff;
+}
+
+#zone-switch{
+    vertical-align: middle;
+}
+
+/* Clock rolling animation */
+.clock-box{
+    overflow: hidden;
+    line-height: 1.1;
+    display: inline-block;
+    height: 1.1em; /* keep container fixed to a single line height */
+    font-variant-numeric: tabular-nums; /* fixed-width digits */
+    font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.clock-roller{
+    display: block;
+    will-change: transform;
+}
+
+.clock-roller>.clock-line{
+    display: block;
+    height: 1.1em;    /* each line exactly one line tall */
+    line-height: 1.1em;
+}
+
+.clock-roller.clock-animate-up{
+    transform: translateY(-1.1em);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
