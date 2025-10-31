@@ -65,6 +65,94 @@ const albums = [
         excluded: []
     },{
         id: 9,
+        name: "Singapore Trip 2024 - Full trip",
+        description: "May 2-4, 2024. Singapore Solo Trip - Merlion, Garden by the Bay, Sentosa, and more.",
+        basePath: "singapore2024",
+        first: 1,
+        last: 66,
+        excluded: []
+    },{
+        id: 10,
+        name: "Japan Trip 2025 - Airport",
+        description: "May 2-8, 2025. Osaka and Nara, Japan Solo Trip - Hong Kong International Airport (HKIA) layover.",
+        basePath: "osaka2025-airport",
+        first: 1,
+        last: 12,
+        excluded: []
+    },{
+        id: 11,
+        name: "Japan Trip 2025 - Osaka World Expo 2025",
+        description: "May 3, 2025. Osaka World Exposition 2025, Yumeshima Island, Osaka, Japan.",
+        basePath: "osaka2025-expo",
+        first: 1,
+        last: 30,
+        excluded: []
+    },{
+        id: 12,
+        name: "Japan Trip 2025 - Osaka Castle",
+        description: "May 4, 2025. Osaka Castle, Osaka, Japan.",
+        basePath: "osaka2025-castle",
+        first: 1,
+        last: 21,
+        excluded: []
+    },{
+        id: 13,
+        name: "Japan Trip 2025 - Osaka Kaiyukan Aquarium",
+        description: "May 4, 2025. Osaka Kaiyukan Aquarium, Osaka, Japan.",
+        basePath: "osaka2025-kaiyukan",
+        first: 1,
+        last: 27,
+        excluded: []
+    },{
+        id: 14,
+        name: "Japan Trip 2025 - Universal Studio Japan",
+        description: "May 5, 2025. Universal Studio Japan, Osaka, Japan.",
+        basePath: "osaka2025-usj",
+        first: 1,
+        last: 45,
+        excluded: []
+    },{
+        id: 15,
+        name: "Japan Trip 2025 - Tsurumi Ryokuchi Park",
+        description: "May 7, 2025. Tsurumi Ryokuchi Park (1990 International Garden and Greenery Exposition), Osaka, Japan.",
+        basePath: "osaka2025-garden",
+        first: 1,
+        last: 18,
+        excluded: []
+    },{
+        id: 16,
+        name: "Japan Trip 2025 - Nara Park",
+        description: "May 7, 2025. Nara Park, Nara, Japan.",
+        basePath: "osaka2025-nara",
+        first: 1,
+        last: 27,
+        excluded: []
+    },{
+        id: 17,
+        name: "Japan Trip 2025 - Osaka City View",
+        description: "May 2-8, 2025. Shinsaibashi - Kuromon Ichiba Market - Shinsekai - Harukas 300 Observatory - Tower of the Sun, Osaka, Japan.",
+        basePath: "osaka2025-city",
+        first: 1,
+        last: 30,
+        excluded: []
+    },{
+        id: 18,
+        name: "Aom's Graduation Picture - 2025",
+        description: "Benchakitti Park, Queen Sirikit National Convention Center, and Phra Phuttha Yodfa Memorial Bridge",
+        basePath: "aom2025-graduation",
+        first: 1,
+        last: 30,
+        excluded: []
+    },{
+        id: 19,
+        name: "Corgi in the Garden - Dog Cafe in Bangkok",
+        description: "Lots of cute corgis.",
+        basePath: "corgithegarden",
+        first: 1,
+        last: 9,
+        excluded: []
+    },{
+        id: 20,
         name: "Graphics Design",
         description: "Here are my graphics designed for some of university events and activities.",
         basePath: "graphics",

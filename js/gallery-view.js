@@ -341,7 +341,9 @@ function contentLoad(){
     
     // Set album name
     const albumName = document.getElementById("album-name");
+    const topButtonText = document.getElementById("top-button");
     albumName.innerHTML = currentAlbum.name;
+    topButtonText.innerHTML = "Album View - " + currentAlbum.name;
 
     // Set album description
     const albumDescription = document.getElementById("album-description");

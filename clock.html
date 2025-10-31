@@ -25,26 +25,63 @@
     <title>Clock</title>
 </head>
 
-<body class="d-flex flex-column h-100 bg-dark mb-5">
+<body class="d-flex flex-column h-100 mb-5">
     <main class="flex-shrink-0 p-5 my-auto">
         <div class="container text-white">
-            <span class="my-1 fs-6">
-                <span class="noto-color-emoji-regular" id="zone-emoji"></span> <span id="zone-name"></span>
-            </span>
-            <div class="d-flex flex-row justify-content-between">
-                <span class="fs-3" id="clock-date">Initializing...</span>
-                <i class="" id="clock-dayside"></i>
+            <div id="clock-dual-wrapper">
+                <div id="clock1-section" class="clock-section me-4">
+                    <span class="my-1 fs-6">
+                        <span class="noto-color-emoji-regular" id="zone-emoji"></span> <span id="zone-name"></span>
+                    </span>
+                    <div class="d-flex flex-row justify-content-between">
+                        <span class="fs-3" id="clock-date">Initializing...</span>
+                        <span>
+                            <span class="me-1 fs-6 text-secondary" id="temp-primary"></span>
+                            <i class="" id="clock-dayside"></i>
+                        </span>
+                    </div>
+                    <hr>
+                    <div class="d-flex flex-row justify-content-center">
+                        <span class="mx-3 fs-96 clock-box" id="clock-hour">..</span>
+                        <span class="mx-3 fs-96">:</span>
+                        <span class="mx-3 fs-96 clock-box" id="clock-minute">..</span>
+                        <span class="mx-3 fs-96 opacity-50" id="clock-second-colon">:</span>
+                        <span class="mx-3 fs-96 clock-box opacity-50" id="clock-second">..</span>
+                    </div>
+                </div>
+                <div id="clock2-section" class="clock-section display-none">
+                <span class="my-1 fs-6">
+                    <span class="noto-color-emoji-regular" id="zone2-emoji"></span> <span id="zone2-name"></span>
+                </span>
+                <div class="d-flex flex-row justify-content-between">
+                    <span class="fs-3" id="clock2-date">Initializing...</span>
+                    <span>
+                        <span class="me-1 fs-6 text-secondary" id="temp-secondary"></span>
+                        <i class="" id="clock2-dayside"></i>
+                    </span>
+                </div>
+                    <hr>
+                    <div class="d-flex flex-row justify-content-center">
+                    <span class="mx-3 fs-96 clock-box" id="clock2-hour">..</span>
+                    <span class="mx-3 fs-96">:</span>
+                    <span class="mx-3 fs-96 clock-box" id="clock2-minute">..</span>
+                    <span class="mx-3 fs-96 opacity-50" id="clock2-second-colon">:</span>
+                    <span class="mx-3 fs-96 clock-box opacity-50" id="clock2-second">..</span>
+                </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column align-items-end display-none" id="temp-side">
+                <div class="weather-box">
+                    <span class="fs-7"><i class="bi bi-thermometer-sun"></i> Temperature</span><br/>
+                    <span class="fs-2" id="weather-temp-1">..</span>
+                </div>
+                <div class="weather-box mt-2">
+                    <span class="fs-7"><i class="bi bi-thermometer-sun"></i> Temperature</span><br/>
+                    <span class="fs-2" id="weather-temp-2">..</span>
+                </div>
             </div>
             <hr>
-            <div class="d-flex flex-row justify-content-center">
-                <span class="mx-3 fs-96 clock-box" id="clock-hour">..</span>
-                <span class="mx-3 fs-96">:</span>
-                <span class="mx-3 fs-96 clock-box" id="clock-minute">..</span>
-                <span class="mx-3 fs-96 opacity-50">:</span>
-                <span class="mx-3 fs-96 clock-box opacity-50" id="clock-second">..</span>
-            </div>
-            <hr>
-            <div class="d-flex flex-row justify-content-center">
+            <div class="d-flex flex-row justify-content-center" id="weather-section">
                 <div class="me-2 weather-box">
                     <span class="fs-7"><i class="bi bi-thermometer-sun"></i> Temperature</span><br/>
                     <span class="fs-2" id="weather-temp">..</span><br/>
@@ -74,8 +111,18 @@
         </div>
     </main>
     <!-- Sticky footer -->
-    <footer class="footer bg-dark">
-        <div class="container d-flex flex-row justify-content-between p-2 small" id="zone-selector">
+    <footer class="footer">
+        <div class="container p-2 small d-flex flex-row justify-content-center">
+            <div>
+                <label class="me-2 text-secondary">Primary</label>
+                <select id="zone-select-1" class="form-select form-select-sm d-inline w-auto"></select>
+                <button id="zone-switch" class="btn btn-sm btn-outline-secondary mx-2" type="button" aria-label="Switch primary and secondary" title="Switch">
+                    <i class="bi bi-arrow-left-right"></i>
+                </button>
+                <label class="me-2 text-secondary">Secondary</label>
+                <select id="zone-select-2" class="form-select form-select-sm d-inline w-auto"></select>
+            </div>
+            <div id="zone-selector"></div>
         </div>
     </footer>
     <!-- load JS script last and defer -->
