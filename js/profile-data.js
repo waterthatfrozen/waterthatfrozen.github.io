@@ -26,7 +26,10 @@ const work = [
         position: 'Software Engineer',
         company: 'Agoda Services Co., Ltd.',
         year: 'February 2025 - Present',
-        detail: `Joined in the Payout Services/Payout Partner Experiences team, focusing on improving and revamping the payout system on a new architecture.<br/>`,
+        detail: `- Joined the Payout Partner Experience team, revamping the payout system while ensuring system reliability at its highest.<br/>
+                 - Rebuilt the AP Payout Processing system for virtual credit card flow and bank transfer flow to better support the scalability of the business for processing multi-billion-dollar volumes<br/>
+                 - Rebuilt the payout channel migration flow to support the supplier's request to change their preferred channel while ensuring data integrity and timely transactions.<br/>
+                 - Mentored and supported software engineer interns and contractors in the team on their assigned projects.`,
         link: null
     },
     {
