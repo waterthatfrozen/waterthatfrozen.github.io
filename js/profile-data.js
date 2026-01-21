@@ -1,5 +1,12 @@
 const education = [
     {
+        degree:`Master of Science in Electrical and Computer Engineering`,
+        school: `<a href="https://www.cmu.edu/ece/">Carnegie Mellon University</a>`,
+        year: `January 2026 - Present`,
+        detail: `Royal Thai Government Scholarship Recipient (Under Ministry of Higher Education, Science, Research and Innovation)`,
+        link: null
+    },
+    {
         degree:`Bachelor of Engineering (Digital Engineering), First-class Honors`,
         school: `<a href="https://www.siit.tu.ac.th/">Sirindhorn International Institute of Technology (SIIT), Thammasat University.</a>`,
         year: `August 2019 - May 2023`,
@@ -25,41 +32,36 @@ const work = [
     {
         position: 'Software Engineer',
         company: 'Agoda Services Co., Ltd.',
-        year: 'February 2025 - Present',
-        detail: `- Joined the Payout Partner Experience team, revamping the payout system while ensuring system reliability at its highest.<br/>
-                 - Rebuilt the AP Payout Processing system for virtual credit card flow and bank transfer flow to better support the scalability of the business for processing multi-billion-dollar volumes<br/>
-                 - Rebuilt the payout channel migration flow to support the supplier's request to change their preferred channel while ensuring data integrity and timely transactions.<br/>
-                 - Mentored and supported software engineer interns and contractors in the team on their assigned projects.`,
+        year: 'February 2025 - December 2025',
+        detail: `- Modernized the AP Payout system to increase scalability and processing capacity for processing financial transactions of more than eighteen billion dollars per year.<br/>
+                 - Transformed payout channel migration flow to handle supplier's request to change their preferred channel, reduced operational wait time and increased data integrity.<br/>
+                 - Mentored software engineer interns and contractors on assigned projects, ensuring timely and quality delivery.`,
         link: null
     },
     {
         position: `Associate Software Engineer`,
         company: `Agoda Services Co., Ltd.`,
         year: `May 2023 - January 2025`,
-        detail: `-  Joined in the Payout Expansion team, focusing on expanding payout system across multiproduct booking landscape and new business initiatives.<br/>
-                 -	Built a payout flow to support the acceptance and expansion of virtual credit card usage to hotel suppliers in Japan.<br/>
-                 -	Modified the current system to support variable payout date with various conditions based on demand of each supplier.<br/>
-                 -	Improved internal financial backoffice operation system with modernized services and user interface for smoother agents' operation.<br/>
-                 -	Integrated virtual credit card for payout usage to third-party vendors and activities suppliers with full reconciliation process.`,
+        detail: `- Implemented a simplified virtual credit card usage flow for Japanese accommodation suppliers, increasing virtual card adoption rate by suppliers in Japan and rebates income.<br/>
+                 - Onboarded variable payout date feature to facilitate supplier's demand, enhancing system's flexibility.<br/>
+                 - Integrated virtual credit card for payout usage to third-party vendors and activities suppliers with a reconciliation process.`,
         link: null
     },
     {
         position: `Software Engineer Intern`,
         company: `Agoda Services Co., Ltd.`,
         year: `January 2023 - April 2023`,
-        detail: `-	Joined in the Fintech Payout team, facilitate correct and on-time payment from company to supplier with reconciliation ability.<br/>
-                 -	Implemented database credentials rotation of legacy services with Hashicorp's Vault, improving the security of service and financial data.<br/>
-                 -	Onboarded critical services in the domain to company's new private cloud architecture with Docker and Kubernetes cluster.<br/>
-                 -	Conducted knowledge sharing session on private cloud to Fintech members and managers.`,
+        detail: `- Implemented database credentials rotation of legacy services with Vault, improving the company's financial processing system and data.<br/>
+                 - Onboarded critical services in domain to the company's new private cloud architecture with Docker and Kubernetes clusters, improving system's reliability and redundancy.`,
         link: null
     },
     {
         position: `Undergraduate Research Assistant`,
         company: `Thammasat University Smart Street Light Unit, AI Ready City Networking in RUN Project`,
         year: `June 2022 - December 2022`,
-        detail: `Developed a web application for monitoring and controlling the smart lighting system in campus, and data analytics for more efficient energy usage and sufficient lighting in the campus, 
-        under the supervision of supervision of Dr. Somrudee Deepaisarn and Prof. Dr. Virach Sornlertlamvanich.
-        An international conference paper and an international journal article are published in this work.`,
+        detail: `- Developed a web application to monitor and control the lighting system on campus, providing safety to residents and easier maintenance to university staff.<br/>
+                 - Integrated a data collection and analytics system to predict more efficient usage, reducing electricity cost and maintenance time.<br/>
+                 - Published the research in 2 international journals and 1 international conference.`,
         link: null
     },{
         position: `Undergraduate Research Assistant`,
