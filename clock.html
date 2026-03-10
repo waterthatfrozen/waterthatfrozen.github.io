@@ -29,10 +29,13 @@
     <main class="flex-shrink-0 p-5 my-auto">
         <div class="container text-white">
             <div id="clock-dual-wrapper">
-                <div id="clock1-section" class="clock-section me-4">
-                    <span class="my-1 fs-6">
-                        <span class="noto-color-emoji-regular" id="zone-emoji"></span> <span id="zone-name"></span>
-                    </span>
+                <div id="clock1-section" class="clock-section">
+                    <div class="my-1">
+                        <span class="fs-6">
+                            <span class="noto-color-emoji-regular" id="zone-emoji"></span> <span id="zone-name"></span>
+                        </span>
+                        <div class="fs-7 text-secondary" id="zone-dst"></div>
+                    </div>
                     <div class="d-flex flex-row justify-content-between">
                         <span class="fs-3" id="clock-date">Initializing...</span>
                         <span>
@@ -50,9 +53,12 @@
                     </div>
                 </div>
                 <div id="clock2-section" class="clock-section display-none">
-                <span class="my-1 fs-6">
-                    <span class="noto-color-emoji-regular" id="zone2-emoji"></span> <span id="zone2-name"></span>
-                </span>
+                <div class="my-1">
+                    <span class="fs-6">
+                        <span class="noto-color-emoji-regular" id="zone2-emoji"></span> <span id="zone2-name"></span>
+                    </span>
+                    <div class="fs-7 text-secondary" id="zone2-dst"></div>
+                </div>
                 <div class="d-flex flex-row justify-content-between">
                     <span class="fs-3" id="clock2-date">Initializing...</span>
                     <span>
@@ -80,7 +86,7 @@
                     <span class="fs-2" id="weather-temp-2">..</span>
                 </div>
             </div>
-            <hr>
+            <hr id="weather-divider">
             <div class="d-flex flex-row justify-content-center" id="weather-section">
                 <div class="me-2 weather-box">
                     <span class="fs-7"><i class="bi bi-thermometer-sun"></i> Temperature</span><br/>
@@ -105,7 +111,7 @@
                     <span class="fs-7" id="weather-wind-direction">..</span>
                 </div>
             </div>
-            <div class="d-flex flex-row justify-content-center mt-3">
+            <div class="d-flex flex-row justify-content-center mt-3" id="weather-last-updated-row">
                 <span class="fs-7 text-secondary" id="weather-last-updated">..</span>
             </div>
         </div>
@@ -113,14 +119,19 @@
     <!-- Sticky footer -->
     <footer class="footer">
         <div class="container p-2 small d-flex flex-row justify-content-center">
-            <div>
-                <label class="me-2 text-secondary">Primary</label>
-                <select id="zone-select-1" class="form-select form-select-sm d-inline w-auto"></select>
-                <button id="zone-switch" class="btn btn-sm btn-outline-secondary mx-2" type="button" aria-label="Switch primary and secondary" title="Switch">
-                    <i class="bi bi-arrow-left-right"></i>
-                </button>
-                <label class="me-2 text-secondary">Secondary</label>
-                <select id="zone-select-2" class="form-select form-select-sm d-inline w-auto"></select>
+            <div class="zone-picker-compact">
+                <div class="zone-picker-labels text-secondary">
+                    <span>Primary</span>
+                    <span></span>
+                    <span>Secondary</span>
+                </div>
+                <div class="zone-picker-controls">
+                    <select id="zone-select-1" class="form-select form-select-sm"></select>
+                    <button id="zone-switch" class="btn btn-sm btn-outline-secondary" type="button" aria-label="Switch primary and secondary" title="Switch">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <select id="zone-select-2" class="form-select form-select-sm"></select>
+                </div>
             </div>
             <div id="zone-selector"></div>
         </div>

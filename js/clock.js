@@ -50,9 +50,96 @@ zoneSelectorBox.querySelectorAll('a').forEach(a => {
 const select1 = document.getElementById('zone-select-1');
 const select2 = document.getElementById('zone-select-2');
 const switchBtn = document.getElementById('zone-switch');
+
+function compactZoneLabel(zone) {
+    return `${zone.zoneEmoji} ${zone.zoneName}`;
+}
+
+function getTimeZoneOffsetMinutes(date, timeZone) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    }).formatToParts(date);
+
+    const partMap = {};
+    parts.forEach(part => {
+        if (part.type !== 'literal') {
+            partMap[part.type] = part.value;
+        }
+    });
+
+    const asUtc = Date.UTC(
+        parseInt(partMap.year, 10),
+        parseInt(partMap.month, 10) - 1,
+        parseInt(partMap.day, 10),
+        parseInt(partMap.hour, 10),
+        parseInt(partMap.minute, 10),
+        parseInt(partMap.second, 10)
+    );
+
+    return Math.round((asUtc - date.getTime()) / 60000);
+}
+
+function getTimeZoneName(date, timeZone) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+        timeZone,
+        timeZoneName: 'long'
+    }).formatToParts(date);
+
+    const tzNamePart = parts.find(part => part.type === 'timeZoneName');
+    return tzNamePart ? tzNamePart.value : '';
+}
+
+function getYearlyOffsets(timeZone, year) {
+    const offsets = new Set();
+
+    // Sample each month at noon UTC to avoid edge ambiguity around midnight transitions.
+    for (let month = 0; month < 12; month += 1) {
+        const sampleDate = new Date(Date.UTC(year, month, 15, 12, 0, 0));
+        offsets.add(getTimeZoneOffsetMinutes(sampleDate, timeZone));
+    }
+
+    return Array.from(offsets);
+}
+
+function getDstIndicator(timeZone) {
+    try {
+        const now = new Date();
+        const year = now.getUTCFullYear();
+
+        // Prefer explicit naming from tz data when available.
+        const tzName = getTimeZoneName(now, timeZone).toLowerCase();
+        if (tzName.includes('daylight') || tzName.includes('summer')) {
+            return 'DST: Active';
+        }
+        if (tzName.includes('standard')) {
+            return 'DST: Inactive';
+        }
+
+        // Fallback: detect whether this zone has seasonal offset changes this year.
+        const offsets = getYearlyOffsets(timeZone, year);
+        if (offsets.length <= 1) {
+            return 'DST: Not observed';
+        }
+
+        const offsetNow = getTimeZoneOffsetMinutes(now, timeZone);
+        const dstOffset = Math.max(...offsets);
+
+        return offsetNow === dstOffset ? 'DST: Active' : 'DST: Inactive';
+    } catch (error) {
+        return 'DST: Unknown';
+    }
+}
+
 if (select1 && select2){
-    select1.innerHTML = ZONE_INFO.map(z => `<option value="${z.zoneKey}">${z.zoneEmoji} ${z.zoneKey} - ${z.zoneName}</option>`).join('');
-    select2.innerHTML = `<option value="">(none)</option>` + ZONE_INFO.map(z => `<option value="${z.zoneKey}">${z.zoneEmoji} ${z.zoneKey} - ${z.zoneName}</option>`).join('');
+    select1.innerHTML = ZONE_INFO.map(z => `<option value="${z.zoneKey}" title="${z.zoneName}">${compactZoneLabel(z)}</option>`).join('');
+    select2.innerHTML = `<option value="">(none)</option>` + ZONE_INFO.map(z => `<option value="${z.zoneKey}" title="${z.zoneName}">${compactZoneLabel(z)}</option>`).join('');
     select1.value = selectedZoneKey;
     select2.value = selectedZone2Key || '';
 
@@ -101,18 +188,26 @@ document.getElementById("zone-name").innerText = selectedZone.zoneName;
 const clock2Section = document.getElementById("clock2-section");
 const zone2EmojiEl = document.getElementById("zone2-emoji");
 const zone2NameEl = document.getElementById("zone2-name");
+const zoneDstEl = document.getElementById("zone-dst");
+const zone2DstEl = document.getElementById("zone2-dst");
 const daySideBox2 = document.getElementById("clock2-dayside");
 const dateBox2 = document.getElementById("clock2-date");
 const tempSide = document.getElementById('temp-side');
 const weatherSection = document.getElementById('weather-section');
+const weatherDivider = document.getElementById('weather-divider');
+const weatherUpdatedRow = document.getElementById('weather-last-updated-row');
 const secondBoxColon = document.getElementById('clock-second-colon');
 const secondBox2Colon = document.getElementById('clock2-second-colon');
+if (zoneDstEl) zoneDstEl.innerText = getDstIndicator(selectedZone.timeZone);
 if (selectedZone2){
     zone2EmojiEl.innerText = selectedZone2.zoneEmoji;
     zone2NameEl.innerText = selectedZone2.zoneName;
+    if (zone2DstEl) zone2DstEl.innerText = getDstIndicator(selectedZone2.timeZone);
     clock2Section.classList.remove('display-none');
     tempSide.classList.add('display-none');
     weatherSection.classList.add('display-none');
+    if (weatherDivider) weatherDivider.classList.add('display-none');
+    if (weatherUpdatedRow) weatherUpdatedRow.classList.add('display-none');
     const wrapper = document.getElementById('clock-dual-wrapper');
     if (wrapper) wrapper.classList.add('dual');
 } else {
@@ -120,8 +215,11 @@ if (selectedZone2){
     clock2Section.classList.add('display-none');
     tempSide.classList.add('display-none');
     weatherSection.classList.remove('display-none');
+    if (weatherDivider) weatherDivider.classList.remove('display-none');
+    if (weatherUpdatedRow) weatherUpdatedRow.classList.remove('display-none');
     const wrapper = document.getElementById('clock-dual-wrapper');
     if (wrapper) wrapper.classList.remove('dual');
+    if (zone2DstEl) zone2DstEl.innerText = '';
 }
 
 // clock part
@@ -212,7 +310,7 @@ function setClock() {
     prevHour = h; prevMinute = m; prevSecond = s;
 
     let dateString = dateBox.innerText = `${currentTime.toLocaleDateString("en-UK", {timeZone: selectedTimezone, dateStyle: "full"})}`.split(' ');
-    dateBox.innerText = `${dateString[0]}, ${dateString[2]} ${dateString[1]}, ${dateString[3]}`;
+    dateBox.innerText = `${dateString[0]} ${dateString[2]} ${dateString[1]}, ${dateString[3]}`;
 
     daySideBox.classList = (h >= '06' && h <= '18') 
                             ? "ms-3 bi bi-sun fs-4" 
@@ -242,7 +340,7 @@ function setClock() {
                                 : "ms-3 bi bi-moon-stars fs-4";
 
         let dateString2 = `${currentTime.toLocaleDateString("en-UK", {timeZone: selectedZone2.timeZone, dateStyle: "full"})}`.split(' ');
-        dateBox2.innerText = `${dateString2[0]}, ${dateString2[2]} ${dateString2[1]}, ${dateString2[3]}`;
+        dateBox2.innerText = `${dateString2[0]} ${dateString2[2]} ${dateString2[1]}, ${dateString2[3]}`;
     }
 };
 

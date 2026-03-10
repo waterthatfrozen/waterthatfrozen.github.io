@@ -52,6 +52,7 @@ div{
     bottom: 0;
     width: 100%;
     line-height: 20px;
+    background-color: #000;
 }
 
 h1,
@@ -239,6 +240,13 @@ img{
     display: block;
 }
 
+#clock1-section,
+#clock2-section{
+    min-width: 0;
+    margin-right: 0 !important;
+    width: 100%;
+}
+
 @media (min-width: 768px){
     #clock-dual-wrapper{ display: block; }
     #clock-dual-wrapper.dual{
@@ -279,6 +287,41 @@ img{
     vertical-align: middle;
 }
 
+.zone-picker-compact{
+    --zone-switch-width: 42px;
+    width: min(920px, 100%);
+}
+
+.zone-picker-labels{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--zone-switch-width) minmax(0, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+.zone-picker-labels span{
+    font-size: 12px;
+}
+
+.zone-picker-controls{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--zone-switch-width) minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.zone-picker-controls #zone-switch{
+    width: var(--zone-switch-width);
+    min-width: var(--zone-switch-width);
+    margin: 0 !important;
+}
+
+#zone-select-1,
+#zone-select-2{
+    width: 100%;
+    min-width: 0;
+}
+
 /* Clock rolling animation */
 .clock-box{
     overflow: hidden;
@@ -303,4 +346,102 @@ img{
 .clock-roller.clock-animate-up{
     transform: translateY(-1.1em);
     transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767.98px){
+    main.flex-shrink-0{
+        padding: 1rem !important;
+    }
+
+    .container{
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .fs-96{
+        font-size: clamp(2.8rem, 17vw, 4.4rem);
+        line-height: 1;
+    }
+
+    #clock1-section .mx-3,
+    #clock2-section .mx-3{
+        margin-left: 0.35rem !important;
+        margin-right: 0.35rem !important;
+    }
+
+    #clock-date,
+    #clock2-date{
+        font-size: 1rem !important;
+        line-height: 1.3;
+    }
+
+    #clock1-section .d-flex.flex-row.justify-content-between,
+    #clock2-section .d-flex.flex-row.justify-content-between{
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    #weather-section:not(.display-none){
+        display: flex !important;
+        flex-wrap: nowrap;
+        justify-content: flex-start !important;
+        gap: 0.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.25rem;
+    }
+
+    .weather-box{
+        width: 130px;
+        flex: 0 0 auto;
+        min-width: 0;
+        margin-right: 0 !important;
+    }
+
+    /* Mobile weather focuses on the three key metrics. */
+    #weather-section .weather-box:nth-child(3),
+    #weather-section .weather-box:nth-child(4){
+        display: none;
+    }
+
+    #weather-last-updated{
+        text-align: center;
+    }
+
+    #clock-dual-wrapper.dual #clock2-section{
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+
+    .footer{
+        position: static;
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+
+    .footer .container{
+        display: flex;
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 0.6rem;
+    }
+
+    .zone-picker-controls{
+        --zone-switch-width: 40px;
+        gap: 0.35rem;
+    }
+
+    .zone-picker-compact{
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+    }
+}
+
+@media (max-width: 420px){
+    .fs-96{
+        font-size: clamp(2.5rem, 18vw, 3.8rem);
+    }
 }
