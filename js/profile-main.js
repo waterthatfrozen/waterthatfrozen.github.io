@@ -1,17 +1,25 @@
-function createMainItemCard(title, subtitle, duration, description, link){
-    return `<div class="px-3 pt-2">
+function createMainItemCard(title, subtitle, duration, description, link) {
+  return `<div class="px-3 pt-2">
         <h5 class="fw-semibold">${title ? title : ""}</h5>
         <h6>${subtitle ? subtitle : ""}</h6>
         <span class="fs-6">
             ${duration ? duration : ""}
-            ${description ? "</br>"+description : ""}
+            ${description ? "</br>" + description : ""}
         </span>
         ${link ? `<br/><span class="fs-6 mt-2">${link}</span>` : ""}
     </div>`;
 }
 
-function createPublicationCard(title, type, journal, publisher, publishedDate, doi, link){
-    return `<div class="px-3 pt-2">
+function createPublicationCard(
+  title,
+  type,
+  journal,
+  publisher,
+  publishedDate,
+  doi,
+  link,
+) {
+  return `<div class="px-3 pt-2">
         <h5 class="fw-semibold">${title}</h5>
         <h6>
             <span>${type}</span><br/>
@@ -28,18 +36,18 @@ function createPublicationCard(title, type, journal, publisher, publishedDate, d
     </div>`;
 }
 
-function createListItemCard(title,list){
-    return `
+function createListItemCard(title, list) {
+  return `
     <div class="px-3 pt-1">
         <h5 class="fw-semibold">${title}</h5>
         <ul class="list-dashed">
             ${list.map((item) => `<li>${item}</li>`).join("")}
         </ul>
-    </div>`
+    </div>`;
 }
 
-function createGridItemCard(title,list){
-    return `
+function createGridItemCard(title, list) {
+  return `
     <div class="px-3 pt-1 pb-3">
         <h5 class="fw-semibold">${title}</h5>
         <div class="row row-cols-2 row-cols-md-4 g-2">
@@ -48,59 +56,116 @@ function createGridItemCard(title,list){
     </div>`;
 }
 
-function contentLoad(){
-    const educationContainer = document.getElementById("education-background");
-    const workContainer = document.getElementById("work-experience");
-    const publicationContainer = document.getElementById("publication");
-    const volunteerExperienceContainer = document.getElementById("volunteer-experience");
-    const awardContainer = document.getElementById("award");
-    const skillContainer = document.getElementById("skill");
-    education.map((item,index) => {
-        educationContainer.innerHTML += createMainItemCard(item.degree, item.school, item.year, item.detail, item.link);
-        if(index < education.length-1){
-            educationContainer.innerHTML += `<hr/>`;
-        }
-    });
-    work.map((item,index) => {
-        workContainer.innerHTML += createMainItemCard(item.position, item.company, item.year, item.detail, item.link);
-        if(index < work.length-1){
-            workContainer.innerHTML += `<hr/>`;
-        }
-    });
-    publication.map((item,index) => {
-        publicationContainer.innerHTML += createPublicationCard(item.title, item.type, item.journal, item.publisher, item.publishedDate, item.doi, item.link);
-        if(index < publication.length-1){
-            publicationContainer.innerHTML += `<hr/>`;
-        }
-    });
-    volunteerExperience.map((item) => {
-        volunteerExperienceContainer.innerHTML += createListItemCard(item.year, item.titles);
-    });
-    award.map((item) => {
-        awardContainer.innerHTML += createListItemCard(item.year, item.titles);
-    });
-    skill.map((item) => {
-        skillContainer.innerHTML += createGridItemCard(item.category, item.items);
-    });
+function contentLoad() {
+  const educationContainer = document.getElementById("education-background");
+  const workContainer = document.getElementById("work-experience");
+  const researchContainer = document.getElementById("research-experience");
+  const publicationContainer = document.getElementById("publication");
+  const volunteerExperienceContainer = document.getElementById(
+    "volunteer-experience",
+  );
+  const awardContainer = document.getElementById("award");
+  const skillContainer = document.getElementById("skill");
+  education.map((item, index) => {
+    educationContainer.innerHTML += createMainItemCard(
+      item.degree,
+      item.school,
+      item.year,
+      item.detail,
+      item.link,
+    );
+    if (index < education.length - 1) {
+      educationContainer.innerHTML += `<hr/>`;
+    }
+  });
+  research.map((item, index) => {
+    researchContainer.innerHTML += createMainItemCard(
+      item.position,
+      item.company,
+      item.year,
+      item.detail,
+      item.link,
+    );
+    if (index < research.length - 1) {
+      researchContainer.innerHTML += `<hr/>`;
+    }
+  });
+  work.map((item, index) => {
+    workContainer.innerHTML += createMainItemCard(
+      item.position,
+      item.company,
+      item.year,
+      item.detail,
+      item.link,
+    );
+    if (index < work.length - 1) {
+      workContainer.innerHTML += `<hr/>`;
+    }
+  });
+  publication.map((item, index) => {
+    publicationContainer.innerHTML += createPublicationCard(
+      item.title,
+      item.type,
+      item.journal,
+      item.publisher,
+      item.publishedDate,
+      item.doi,
+      item.link,
+    );
+    if (index < publication.length - 1) {
+      publicationContainer.innerHTML += `<hr/>`;
+    }
+  });
+  volunteerExperience.map((item) => {
+    volunteerExperienceContainer.innerHTML += createListItemCard(
+      item.year,
+      item.titles,
+    );
+  });
+  award.map((item) => {
+    awardContainer.innerHTML += createListItemCard(item.year, item.titles);
+  });
+  skill.map((item) => {
+    skillContainer.innerHTML += createGridItemCard(item.category, item.items);
+  });
 }
 
 window.onload = contentLoad;
 
 // Go to top button
 const topButton = document.getElementById("top-button");
+const profileGuide = document.getElementById("profile-guide");
+const profileGuideToggle = document.getElementById("profile-guide-toggle");
 let windowHeight = window.innerHeight;
+
+requestAnimationFrame(() => {
+  profileGuide.classList.add("is-ready");
+});
+
+profileGuideToggle.addEventListener("click", () => {
+  const isHidden = profileGuide.classList.toggle("is-hidden");
+  profileGuideToggle.setAttribute("aria-expanded", String(!isHidden));
+  profileGuideToggle.setAttribute(
+    "aria-label",
+    isHidden ? "Show navigation guide" : "Hide navigation guide",
+  );
+});
+
 window.onscroll = () => {
-    if(document.body.scrollTop > windowHeight/4 || document.documentElement.scrollTop > windowHeight/4){
-        // slowly fade in the button
-        topButton.style.opacity = 1;
-    }else{
-        // fade out
-        topButton.style.opacity = 0;
-    }
+  if (
+    document.body.scrollTop > windowHeight / 4 ||
+    document.documentElement.scrollTop > windowHeight / 4
+  ) {
+    // slowly fade in the button
+    topButton.style.opacity = 1;
+  } else {
+    // fade out
+    topButton.style.opacity = 0;
+  }
 };
 
 window.onresize = () => {
-    windowHeight = window.innerHeight;
+  windowHeight = window.innerHeight;
 };
 
 let currentTime = new Date();
@@ -108,6 +173,6 @@ const timeSpan = document.getElementById("time");
 const copyrightSpan = document.getElementById("copyright");
 copyrightSpan.innerHTML = `&copy; ${currentTime.getFullYear()} Paphana Yiwsiw`;
 setInterval(() => {
-    currentTime = new Date();
-    timeSpan.innerHTML = `${currentTime.toLocaleString("en-UK",{timeZone: "Asia/Bangkok", hour12: false})}`;
+  currentTime = new Date();
+  timeSpan.innerHTML = `${currentTime.toLocaleString("en-UK", { timeZone: "Asia/Bangkok", hour12: false })}`;
 }, 1000);

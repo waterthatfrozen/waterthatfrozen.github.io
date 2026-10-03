@@ -40,16 +40,6 @@ const work = [
     link: null,
   },
   {
-    position: "Research Assistant",
-    company:
-      "Sirindhorn International Institute of Technology (SIIT), Thammasat University",
-    year: "May 2026 - Present",
-    detail: `- Developing a system to support a federated learning model for osteoporosis diagnosis across multiple hospital nodes.<br/>
-             - Implementing a privacy-preserving model training approach while ensuring training data never leaves the local hospital environment.<br/>
-             - Designed system architecture and data flow for both centralized and decentralized training models, ensuring scalability and efficiency in model training across distributed nodes.`,
-    link: null,
-  },
-  {
     position: "Software Engineer",
     company: "Agoda Services Co., Ltd.",
     year: "February 2025 - December 2025",
@@ -73,6 +63,19 @@ const work = [
     year: `January 2023 - April 2023`,
     detail: `- Implemented database credentials rotation of legacy services with Vault, improving the company's financial processing system and data.<br/>
                  - Onboarded critical services in domain to the company's new private cloud architecture with Docker and Kubernetes clusters, improving system's reliability and redundancy.`,
+    link: null,
+  },
+];
+
+const research = [
+  {
+    position: "Research Assistant",
+    company:
+      "Sirindhorn International Institute of Technology (SIIT), Thammasat University",
+    year: "May 2026 - Present",
+    detail: `- Developing a system to support a federated learning model for osteoporosis diagnosis across multiple hospital nodes.<br/>
+             - Implementing a privacy-preserving model training approach while ensuring training data never leaves the local hospital environment.<br/>
+             - Designed system architecture and data flow for both centralized and decentralized training models, ensuring scalability and efficiency in model training across distributed nodes.`,
     link: null,
   },
   {
