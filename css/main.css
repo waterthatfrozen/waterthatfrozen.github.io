@@ -276,6 +276,13 @@ h5{
         color: #fff;
     }
 
+    #profile-guide-content li a {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     #profile-guide-content {
         transition: opacity 0.25s ease-in-out;
     }
