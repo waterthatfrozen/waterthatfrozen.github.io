@@ -98,7 +98,7 @@ p>a, h5>a, h6>a, span>a {
     scroll-margin-top: 6em;
 }
 
-p>a:hover, h5>a:hover, h6>a:hover, span>a:hover, li>a:hover {
+p>a:hover, h5>a:hover, h6>a:hover, span>a:hover, li>a:hover, div>a:hover {
     color: var(--primary);
 }
 
