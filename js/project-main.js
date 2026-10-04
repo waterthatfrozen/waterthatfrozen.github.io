@@ -42,6 +42,7 @@ function contentLoad() {
     }
   });
   createProjectGuide();
+  updateGuideActiveLink();
 }
 
 // Go to top button
@@ -49,9 +50,34 @@ const topButton = document.getElementById("top-button");
 const profileGuide = document.getElementById("profile-guide");
 const profileGuideToggle = document.getElementById("profile-guide-toggle");
 let windowHeight = window.innerHeight;
+let clickedGuideLink = null;
+let clickedGuideLinkTimer = null;
+
+function updateGuideActiveLink(forcedLink = null) {
+  const links = [
+    ...profileGuide.querySelectorAll("#profile-guide-content a[href^='#']"),
+  ];
+  const threshold = window.innerHeight * 0.35;
+  let activeLink = forcedLink || links[0];
+
+  links.forEach((link) => {
+    const target = document.querySelector(link.hash);
+    if (!forcedLink && target && target.getBoundingClientRect().top <= threshold) {
+      activeLink = link;
+    }
+    link.classList.remove("active");
+    link.removeAttribute("aria-current");
+  });
+
+  if (activeLink) {
+    activeLink.classList.add("active");
+    activeLink.setAttribute("aria-current", "location");
+  }
+}
 
 requestAnimationFrame(() => {
   profileGuide.classList.add("is-ready");
+  updateGuideActiveLink();
 });
 
 profileGuideToggle.addEventListener("click", () => {
@@ -62,7 +88,30 @@ profileGuideToggle.addEventListener("click", () => {
     isHidden ? "Show navigation guide" : "Hide navigation guide",
   );
 });
+
+profileGuide.addEventListener("click", (event) => {
+  const link = event.target.closest("#profile-guide-content a[href^='#']");
+  if (link) {
+    event.preventDefault();
+    const target = document.querySelector(link.hash);
+    history.pushState(null, "", link.hash);
+    clickedGuideLink = link;
+    updateGuideActiveLink(link);
+    if (target) {
+      target.scrollIntoView();
+    }
+    window.clearTimeout(clickedGuideLinkTimer);
+    clickedGuideLinkTimer = window.setTimeout(() => {
+      updateGuideActiveLink(clickedGuideLink);
+      clickedGuideLink = null;
+    }, 600);
+  }
+}, true);
+
 window.onscroll = () => {
+  if (!clickedGuideLink) {
+    updateGuideActiveLink();
+  }
   if (
     document.body.scrollTop > windowHeight / 4 ||
     document.documentElement.scrollTop > windowHeight / 4
@@ -74,6 +123,8 @@ window.onscroll = () => {
     topButton.style.opacity = 0;
   }
 };
+
+window.onhashchange = () => updateGuideActiveLink();
 
 window.onresize = () => {
   windowHeight = window.innerHeight;

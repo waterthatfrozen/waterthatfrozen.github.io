@@ -138,8 +138,31 @@ const profileGuide = document.getElementById("profile-guide");
 const profileGuideToggle = document.getElementById("profile-guide-toggle");
 let windowHeight = window.innerHeight;
 
+function updateGuideActiveLink() {
+  const links = [
+    ...profileGuide.querySelectorAll("#profile-guide-content a[href^='#']"),
+  ];
+  const threshold = 120;
+  let activeLink = links[0];
+
+  links.forEach((link) => {
+    const target = document.querySelector(link.hash);
+    if (target && target.getBoundingClientRect().top <= threshold) {
+      activeLink = link;
+    }
+    link.classList.remove("active");
+    link.removeAttribute("aria-current");
+  });
+
+  if (activeLink) {
+    activeLink.classList.add("active");
+    activeLink.setAttribute("aria-current", "location");
+  }
+}
+
 requestAnimationFrame(() => {
   profileGuide.classList.add("is-ready");
+  updateGuideActiveLink();
 });
 
 profileGuideToggle.addEventListener("click", () => {
@@ -152,6 +175,7 @@ profileGuideToggle.addEventListener("click", () => {
 });
 
 window.onscroll = () => {
+  updateGuideActiveLink();
   if (
     document.body.scrollTop > windowHeight / 4 ||
     document.documentElement.scrollTop > windowHeight / 4
