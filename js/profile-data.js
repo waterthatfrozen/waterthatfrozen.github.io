@@ -17,7 +17,7 @@ const education = [
         - Outstanding Activitiy Performance scholarship recipient <br/>
         - Vice president of Digital Engineering Student Committee, Class year 2019 (DE1 SIIT28)<br/>
         - Achieved first rank of class year in the curriculum during academic year 2020, 2021, 2022.<br/>
-        - Received Bhumibol Scholarship Academic Excellence Award of Academic Year 2022.`,
+        - Received Bhumibol Scholarship Medal for Outstanding Academic Performance Under the Royal Patronage of King Bhumibol Adulyadej, Graduate Class of Academic Year 2022.`,
     link: null,
   },
   {
@@ -128,30 +128,30 @@ const publication = [
 
 const award = [
   {
-    year: "2025",
-    titles: [
-      "Bhumibol Scholarship Academic Excellence Award, Graduate Class of Academic Year 2022",
-      "Royal Thai Government Scholarship Recipient (Under Ministry of Higher Education, Science, Research and Innovation)",
-    ],
-  },
-  {
     year: "2024",
     titles: [
-      "Top student in the graduating class, Digital Engineering Curriculum, Academic Excellence Awards (Gold Medal)",
-      "Highest rank of Senior class, Digital Engineering Curriculum, Academic Excellence Award",
+      "Royal Thai Government Scholarship Recipient (Under Ministry of Higher Education, Science, Research and Innovation) for Masters and PhD Level",
     ],
   },
   {
     year: "2023",
     titles: [
-      "Highest rank of Junior class, Digital Engineering Curriculum, Academic Excellence Award",
+      "Bhumibol Scholarship Medal for Outstanding Academic Performance Under the Royal Patronage of King Bhumibol Adulyadej, Graduate Class of Academic Year 2022",
+      "Top student in the graduating class (Gold Medal), Digital Engineering Curriculum, Academic Excellence Awards of Academic Year 2022",
+      "Highest rank of Senior class, Digital Engineering Curriculum, Academic Excellence Award of Academic Year 2022",
     ],
   },
   {
     year: "2022",
     titles: [
       "The Runner-Up Student Paper Award, The 17th International Joint Symposium on Artificial Intelligence and Natural Language Processing (iSAI-NLP 2022)",
+      "Highest rank of Junior class, Digital Engineering Curriculum, Academic Excellence Award of Academic Year 2021",
       "Winner, SIIT Hackathon 2022, SIIT and Thairun",
+    ],
+  },
+  {
+    year: "2021",
+    titles: [
       "Highest rank of Sophomore class, Digital Engineering Curriculum, Academic Excellence Award of Academic Year 2020",
     ],
   },
@@ -159,7 +159,7 @@ const award = [
     year: "2019",
     titles: [
       "Second Runner-up, SIIT Hackathon 2019",
-      "Scholarship Recipient, SIIT 4 Year Continuous Scholarship (OSP: Outstanding Student Program)",
+      "SIIT 4 Years Continuous Full Scholarship Recipient, Outstanding Student Program (OSP)",
     ],
   },
   {
