@@ -162,6 +162,11 @@ function updateGuideActiveLink() {
 
 requestAnimationFrame(() => {
   profileGuide.classList.add("is-ready");
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+    profileGuide.classList.add("is-hidden");
+    profileGuideToggle.setAttribute("aria-expanded", "false");
+    profileGuideToggle.setAttribute("aria-label", "Show navigation guide");
+  }
   updateGuideActiveLink();
 });
 
